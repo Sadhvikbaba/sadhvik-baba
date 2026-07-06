@@ -38,8 +38,8 @@ const ICON_MAP: Record<string, React.ElementType> = {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="w-[100vw] h-full flex flex-col justify-center shrink-0 px-4 sm:px-8 md:px-16 lg:px-24 py-12 md:py-0">
-      <div className="w-full max-w-[1600px] xl:w-[clamp(900px,88vw,1600px)] mx-auto bg-[var(--glass-card-bg)] border border-[var(--glass-card-border)] rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-[0_8px_32px_rgba(0,0,0,0.04)] backdrop-blur-xl flex flex-col xl:flex-row gap-8 lg:gap-12 transition-colors duration-500 hover:border-[var(--color-hero-accent)]/30 group">
+    <div className="w-full md:w-auto md:flex-1 h-full flex flex-col justify-center shrink-0 px-4 sm:px-8 md:px-16 lg:px-24 py-12 md:py-4 lg:py-8">
+      <div className="w-full max-w-[1600px] xl:w-[clamp(900px,88vw,1600px)] mx-auto bg-[var(--glass-card-bg)] border border-[var(--glass-card-border)] rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-[0_8px_32px_rgba(0,0,0,0.04)] backdrop-blur-xl flex flex-col xl:flex-row gap-8 lg:gap-12 transition-colors duration-500 hover:border-[var(--color-hero-accent)]/30 group max-h-full overflow-y-auto">
         
         {/* Left Side: Browser Mockup */}
         <div className="w-full xl:w-[55%] flex-shrink-0 flex flex-col gap-4">

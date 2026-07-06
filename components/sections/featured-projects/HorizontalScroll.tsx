@@ -22,7 +22,7 @@ export default function HorizontalScroll({ children, itemCount, scrollYProgress,
   return (
     <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-center">
       <motion.div
-        style={{ x: xPercent, width: `${itemCount * 100}vw` }}
+        style={{ x: xPercent, width: `${itemCount * 100}%` }}
         className="flex h-full items-center"
       >
         {children}
