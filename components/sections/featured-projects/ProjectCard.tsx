@@ -39,7 +39,7 @@ const ICON_MAP: Record<string, React.ElementType> = {
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className="w-full md:w-auto md:flex-1 h-full flex flex-col justify-center shrink-0 px-4 sm:px-8 md:px-16 lg:px-24 py-12 md:py-4 lg:py-8">
-      <div className="w-full max-w-[1600px] xl:w-[clamp(900px,88vw,1600px)] mx-auto bg-[var(--glass-card-bg)] border border-[var(--glass-card-border)] rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-[0_8px_32px_rgba(0,0,0,0.04)] backdrop-blur-xl flex flex-col xl:flex-row gap-8 lg:gap-12 transition-colors duration-500 hover:border-[var(--color-hero-accent)]/30 group max-h-full overflow-y-auto">
+      <div className="w-full max-w-[1600px] xl:w-[clamp(900px,88vw,1600px)] mx-auto bg-[var(--glass-card-bg)] border border-[var(--glass-card-border)] rounded-3xl p-6 sm:p-8 2xl:p-12 shadow-[0_8px_32px_rgba(0,0,0,0.04)] backdrop-blur-xl flex flex-col xl:flex-row gap-8 2xl:gap-12 transition-colors duration-500 hover:border-[var(--color-hero-accent)]/30 group max-h-full overflow-y-auto">
         
         {/* Left Side: Browser Mockup */}
         <div className="w-full xl:w-[55%] flex-shrink-0 flex flex-col gap-4">
@@ -51,19 +51,19 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Right Side: Content */}
         <div className="w-full xl:w-[45%] flex flex-col justify-center">
-          <div className="text-xs font-bold tracking-[0.2em] uppercase text-[var(--color-hero-accent)] mb-2">
+          <div className="text-xs font-bold tracking-[0.2em] uppercase text-[var(--color-hero-accent)] mb-1.5 2xl:mb-2">
             {project.category}
           </div>
-          <h3 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[var(--color-hero-heading)] font-sans tracking-tight mb-4">
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[var(--color-hero-heading)] font-sans tracking-tight mb-3 2xl:mb-4">
             {project.title}
           </h3>
-          <p className="text-sm md:text-base text-[var(--color-hero-description)] leading-relaxed mb-8 max-w-xl">
+          <p className="text-sm md:text-base text-[var(--color-hero-description)] leading-relaxed mb-5 2xl:mb-8 max-w-xl">
             {project.description}
           </p>
 
           {/* Engineering Highlights */}
-          <div className="mb-8">
-            <h4 className="text-[10px] sm:text-xs font-bold tracking-wider uppercase text-slate-400 dark:text-slate-500 mb-4">
+          <div className="mb-5 2xl:mb-8">
+            <h4 className="text-[10px] sm:text-xs font-bold tracking-wider uppercase text-slate-400 dark:text-slate-500 mb-3 2xl:mb-4">
               Engineering Highlights
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3">
@@ -82,8 +82,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
 
           {/* Tech Stack */}
-          <div className="mb-8">
-            <h4 className="text-[10px] sm:text-xs font-bold tracking-wider uppercase text-slate-400 dark:text-slate-500 mb-4">
+          <div className="mb-5 2xl:mb-8">
+            <h4 className="text-[10px] sm:text-xs font-bold tracking-wider uppercase text-slate-400 dark:text-slate-500 mb-3 2xl:mb-4">
               Tech Stack
             </h4>
             <div className="flex flex-wrap gap-2">
@@ -94,7 +94,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
 
           {/* Metrics */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-2 2xl:grid-cols-4 gap-4 mb-10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-2 2xl:grid-cols-4 gap-3 2xl:gap-4 mb-6 2xl:mb-10">
             {project.metrics.map((m, i) => (
               <MetricCard key={i} value={m.value} label={m.label} />
             ))}
