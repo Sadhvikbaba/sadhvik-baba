@@ -1,49 +1,176 @@
+@import "tailwindcss";
+
+@variant dark (.dark &);
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light Theme - Warm Sand, Camel & Charcoal Aesthetic */
+  --sky-main: #F5F2EB;
+  --sky-top: #E6E1D3;
+  --sky-bottom: #FBF9F6;
+  
+  --hero-heading: #1E293B;
+  --hero-heading-gradient-start: #1E293B;
+  --hero-heading-gradient-mid: #334155;
+  --hero-heading-gradient-end: #475569;
+  
+  --hero-subtitle: #334155;
+  --hero-description: #475569;
+  --hero-accent: #B57552; /* Terracotta camel accent */
+  
+  --hero-button-bg: #1E1B18;
+  --hero-button-hover: #3D3330;
+  --hero-button-text: #FFFFFF;
+  --hero-button-border: transparent;
+  --hero-button-shadow: rgba(30, 27, 24, 0.15);
+  
+  --hero-selection: #E6DCD0;
+  
+  --hero-overlay-start: rgba(245, 242, 235, 0.2);
+  --hero-overlay-mid: rgba(245, 242, 235, 0.05);
+  --hero-overlay-end: transparent;
+  
+  --toggle-bg: transparent;
+  --toggle-border: #E6E1D3;
+  --toggle-icon: #4A3E3D;
+  
+  --scroll-line: #AF937D;
+  --scroll-dot: #8E745C;
+  
+  --glass-card-bg: rgba(245, 242, 235, 0.58);
+  --glass-card-border: rgba(230, 225, 211, 0.35);
+  
+  --site-bg: #F5F2EB;
+  --site-text: #1E1B18;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  /* Dark Theme */
+  --sky-main: #08111F;
+  --sky-top: #091626;
+  --sky-bottom: #050B14;
+  
+  --hero-heading: #F2F7FF;
+  --hero-heading-gradient-start: #FFFFFF;
+  --hero-heading-gradient-mid: #DCE9FF;
+  --hero-heading-gradient-end: #A8C8FF;
+  
+  --hero-subtitle: #C8D9F7;
+  --hero-description: #90A7C7;
+  --hero-accent: #71B7FF;
+  
+  --hero-button-bg: rgba(11, 24, 44, 0.82);
+  --hero-button-hover: #1A355A;
+  --hero-button-text: #FFFFFF;
+  --hero-button-border: rgba(125, 180, 255, 0.22);
+  --hero-button-shadow: rgba(5, 10, 18, 0.55);
+  
+  --hero-overlay-start: rgba(5, 10, 18, 0.55);
+  --hero-overlay-mid: rgba(5, 10, 18, 0.22);
+  --hero-overlay-end: transparent;
+  
+  --toggle-bg: #0E1B2ECC;
+  --toggle-border: #2A466F;
+  --toggle-icon: #FFD86B;
+  
+  --scroll-line: #547DB8;
+  --scroll-dot: #A7CCFF;
+  
+  --glass-card-bg: rgba(8, 17, 31, 0.48);
+  --glass-card-border: rgba(125, 180, 255, 0.12);
+  
+  --site-bg: #08111F;
+  --site-text: #F2F7FF;
+}
+
+@theme {
+  --color-sky-main: var(--sky-main);
+  --color-sky-top: var(--sky-top);
+  --color-sky-bottom: var(--sky-bottom);
+  
+  --color-hero-heading: var(--hero-heading);
+  --color-hero-subtitle: var(--hero-subtitle);
+  --color-hero-description: var(--hero-description);
+  --color-hero-accent: var(--hero-accent);
+  
+  --color-hero-button-bg: var(--hero-button-bg);
+  --color-hero-button-hover: var(--hero-button-hover);
+  --color-hero-button-text: var(--hero-button-text);
+  --color-hero-button-border: var(--hero-button-border);
+  
+  --color-toggle-bg: var(--toggle-bg);
+  --color-toggle-border: var(--toggle-border);
+  --color-toggle-icon: var(--toggle-icon);
+  
+  --color-scroll-line: var(--scroll-line);
+  --color-scroll-dot: var(--scroll-dot);
+  
+  --color-glass-bg: var(--glass-card-bg);
+  --color-glass-border: var(--glass-card-border);
+  
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  scroll-behavior: auto; /* Required for Lenis smooth scrolling */
 }
 
 body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--site-bg);
+  color: var(--site-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* Custom selection styling tied to design token */
+::selection {
+  background-color: var(--hero-selection);
+  color: #ffffff;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* Base scrollbar styles matched to custom colors */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+::-webkit-scrollbar-track {
+  background: var(--sky-bottom);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-line);
+  border-radius: 5px;
+  border: 2px solid var(--sky-bottom);
+  transition: background-color 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-dot);
+}
+
+/* Touch responsiveness scrollbar fallback */
+@media (hover: none) {
+  ::-webkit-scrollbar {
+    width: 6px;
   }
 }
+
+/* Theme switch button star animation */
+@keyframes pulse-star {
+  0%, 100% {
+    opacity: 0.1;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.np-star {
+  animation: pulse-star 3s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
