@@ -53,7 +53,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden transition-colors duration-500 bg-white dark:bg-slate-950">
+    <section id="hero" className="relative w-full overflow-hidden transition-colors duration-500 bg-white dark:bg-slate-950">
       {/* Floating Theme Toggle Container */}
       <div
         className={`fixed z-50 flex flex-col items-center select-none pointer-events-auto transition-all duration-500 ease-in-out ${isScrolled

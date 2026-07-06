@@ -1,0 +1,27 @@
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import { metricCardVariants } from "./motion";
+
+interface MetricCardProps {
+  value: string;
+  label: string;
+}
+
+export default function MetricCard({ value, label }: MetricCardProps) {
+  return (
+    <motion.div
+      variants={metricCardVariants}
+      whileHover={{ y: -2, transition: { duration: 0.2 } }}
+      className="flex flex-col gap-1 p-4 rounded-xl border border-[var(--glass-card-border)] bg-[var(--glass-card-bg)] shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-shadow duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)]"
+    >
+      <div className="text-2xl sm:text-3xl font-bold text-[var(--color-hero-heading)] font-sans tracking-tight flex items-baseline">
+        {value}
+      </div>
+      <div className="text-[10px] sm:text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+        {label}
+      </div>
+    </motion.div>
+  );
+}

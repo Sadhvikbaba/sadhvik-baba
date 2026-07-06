@@ -95,7 +95,7 @@ export default function AboutMe() {
   ];
 
   return (
-    <section className={`relative z-30 w-full min-h-screen lg:h-screen flex items-center justify-center border-t border-b transition-colors duration-500 py-12 lg:py-0 ${isDarkActive ? "bg-[#08111F] border-slate-900/40 text-white" : "bg-[#F5F2EB] border-[#E6E1D3]/50 text-slate-800"}`}>
+    <section id="about" className={`relative z-30 w-full min-h-screen lg:h-screen flex items-center justify-center border-t border-b transition-colors duration-500 py-12 lg:py-0 ${isDarkActive ? "bg-[#08111F] border-slate-900/40 text-white" : "bg-[#F5F2EB] border-[#E6E1D3]/50 text-slate-800"}`}>
       
       {/* Container wrapper */}
       <div className="w-full px-6 md:px-16 lg:px-24 py-6 lg:py-0 grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-10 lg:gap-y-4 items-center">

@@ -1,0 +1,214 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// Featured Projects — Data Layer
+// All project data lives here. Never hardcode inside components.
+// ─────────────────────────────────────────────────────────────────────────────
+
+export interface EngineeringHighlight {
+  /** Key that maps to an icon in ProjectCard's ICON_MAP */
+  icon: string;
+  label: string;
+}
+
+export interface Metric {
+  /**
+   * Generic string value — supports any format:
+   * "50+", "<120ms", "99.9%", "$50K+", "1M+", "40ms"
+   */
+  value: string;
+  label: string;
+}
+
+export type ButtonType = "demo" | "github" | "casestudy" | "architecture";
+
+export interface ProjectButtonData {
+  type: ButtonType;
+  label: string;
+  href: string;
+}
+
+export interface Project {
+  /** Zero-padded display ID: "01", "02", "03", "04" */
+  id: string;
+  number: number;
+  title: string;
+  category: string;
+  description: string;
+  engineeringHighlights: EngineeringHighlight[];
+  techStack: string[];
+  metrics: Metric[];
+  /** Ordered: primary action first → demo, github, casestudy, architecture */
+  buttons: ProjectButtonData[];
+  /** Swap src only — layout stays the same */
+  imageSrc: string;
+  imageAlt: string;
+  /** RGB channel values for the ambient section glow e.g. "59, 130, 246" */
+  glowColor: string;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const FEATURED_PROJECTS: Project[] = [
+  {
+    id: "01",
+    number: 1,
+    title: "Code Fudji",
+    category: "Real-Time Collaboration Platform",
+    description:
+      "A real-time collaborative coding platform with integrated video, voice, chat and file explorer. Built for developers to code, communicate and collaborate seamlessly.",
+    engineeringHighlights: [
+      { icon: "sync", label: "Real-Time Code Sync" },
+      { icon: "video", label: "WebRTC Video & Audio" },
+      { icon: "edit", label: "Monaco Editor" },
+      { icon: "server", label: "MediaSoup SFU" },
+      { icon: "database", label: "Redis Pub/Sub" },
+      { icon: "box", label: "Dockerized Services" },
+    ],
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Redis",
+      "MediaSoup",
+      "Docker",
+      "PostgreSQL",
+    ],
+    metrics: [
+      { value: "50+", label: "Concurrent Users" },
+      { value: "<120ms", label: "Latency" },
+      { value: "99%", label: "Sync Accuracy" },
+      { value: "99.9%", label: "Uptime" },
+    ],
+    buttons: [
+      { type: "demo", label: "Live Demo", href: "#" },
+      { type: "github", label: "GitHub", href: "#" },
+      { type: "casestudy", label: "Case Study", href: "#" },
+      { type: "architecture", label: "Architecture", href: "/projects/code-fudji" },
+    ],
+    imageSrc: "/projects/code-fudji.png",
+    imageAlt: "Code Fudji — Real-Time Collaboration Platform screenshot",
+    glowColor: "59, 130, 246", // blue
+  },
+
+  {
+    id: "02",
+    number: 2,
+    title: "WebRTC SFU Platform",
+    category: "Scalable Real-Time Video Infrastructure",
+    description:
+      "A production-grade WebRTC video conferencing infrastructure built on a Selective Forwarding Unit architecture. Engineered to handle thousands of concurrent media streams with sub-200ms latency.",
+    engineeringHighlights: [
+      { icon: "network", label: "SFU Architecture" },
+      { icon: "video", label: "WebRTC Rooms" },
+      { icon: "zap", label: "Sub-200ms Latency" },
+      { icon: "shield", label: "JWT Authentication" },
+      { icon: "layers", label: "Horizontal Scaling" },
+      { icon: "monitor", label: "Stream Recording" },
+    ],
+    techStack: [
+      "Node.js",
+      "WebRTC",
+      "MediaSoup",
+      "Redis",
+      "NGINX",
+      "Docker",
+      "PostgreSQL",
+    ],
+    metrics: [
+      { value: "1M+", label: "Connections" },
+      { value: "200ms", label: "Latency" },
+      { value: "99.9%", label: "Uptime" },
+      { value: "99%", label: "Reliability" },
+    ],
+    buttons: [
+      { type: "demo", label: "Live Demo", href: "#" },
+      { type: "github", label: "GitHub", href: "#" },
+      { type: "casestudy", label: "Case Study", href: "#" },
+      { type: "architecture", label: "Architecture", href: "/projects/webrtc-sfu" },
+    ],
+    imageSrc: "/projects/webrtc-sfu.png",
+    imageAlt: "WebRTC SFU Platform — Scalable Real-Time Video Infrastructure screenshot",
+    glowColor: "168, 85, 247", // purple
+  },
+
+  {
+    id: "03",
+    number: 3,
+    title: "AWS FinOps Accelerator",
+    category: "AI-Powered Cost Governance",
+    description:
+      "An intelligent AWS cost optimization platform that uses machine learning to forecast cloud spending, detect anomalies, and automatically implement cost-saving recommendations.",
+    engineeringHighlights: [
+      { icon: "brain", label: "ML Cost Forecasting" },
+      { icon: "alert", label: "Anomaly Detection" },
+      { icon: "dollar", label: "Auto Optimization" },
+      { icon: "cloud", label: "Multi-Region AWS" },
+      { icon: "chart", label: "BI Dashboard" },
+      { icon: "bell", label: "Slack Alerts" },
+    ],
+    techStack: [
+      "AWS",
+      "Python",
+      "TypeScript",
+      "Next.js",
+      "TensorFlow",
+      "PostgreSQL",
+      "Grafana",
+    ],
+    metrics: [
+      { value: "30%", label: "Cost Savings" },
+      { value: "95%", label: "Forecast Accuracy" },
+      { value: "$50K+", label: "Saved" },
+      { value: "99%", label: "Coverage" },
+    ],
+    buttons: [
+      { type: "demo", label: "Live Demo", href: "#" },
+      { type: "github", label: "GitHub", href: "#" },
+      { type: "casestudy", label: "Case Study", href: "#" },
+      { type: "architecture", label: "Architecture", href: "/projects/aws-finops" },
+    ],
+    imageSrc: "/projects/aws-finops.png",
+    imageAlt: "AWS FinOps Accelerator — AI-Powered Cost Governance screenshot",
+    glowColor: "251, 146, 60", // amber
+  },
+
+  {
+    id: "04",
+    number: 4,
+    title: "Twit",
+    category: "Twitter Clone Platform",
+    description:
+      "A full-featured social media platform featuring real-time feeds, trending topics, media uploads, and a sophisticated recommendation engine for personalised content delivery at scale.",
+    engineeringHighlights: [
+      { icon: "feed", label: "Real-Time Feed" },
+      { icon: "trending", label: "Trending Algorithm" },
+      { icon: "upload", label: "Media Processing" },
+      { icon: "search", label: "Full-Text Search" },
+      { icon: "bell", label: "Push Notifications" },
+      { icon: "shield", label: "Auth & Rate Limiting" },
+    ],
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Redis",
+      "S3",
+      "Elasticsearch",
+    ],
+    metrics: [
+      { value: "10K+", label: "Users" },
+      { value: "40ms", label: "Response Time" },
+      { value: "99%", label: "Reliability" },
+      { value: "98%", label: "Availability" },
+    ],
+    buttons: [
+      { type: "demo", label: "Live Demo", href: "#" },
+      { type: "github", label: "GitHub", href: "#" },
+      { type: "casestudy", label: "Case Study", href: "#" },
+      { type: "architecture", label: "Architecture", href: "/projects/twit" },
+    ],
+    imageSrc: "/projects/twit.png",
+    imageAlt: "Twit — Twitter Clone Platform screenshot",
+    glowColor: "31, 163, 116", // teal-green
+  },
+];
