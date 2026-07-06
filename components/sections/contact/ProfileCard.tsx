@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export default function ProfileCard() {
   return (
-    <div className="flex flex-col justify-center gap-6 h-full py-4">
-      <div className="flex items-center gap-5">
+    <div className="flex flex-col justify-center gap-4 2xl:gap-6 h-full py-2 2xl:py-4">
+      <div className="flex items-center gap-4 2xl:gap-5">
         <div className="relative w-24 h-24 rounded-full overflow-hidden shrink-0 shadow-sm border border-[var(--color-glass-border)] ring-2 ring-[var(--color-hero-accent)]/10 ring-offset-2 ring-offset-[var(--color-glass-bg)]">
           <Image
             src="/me.jpg"

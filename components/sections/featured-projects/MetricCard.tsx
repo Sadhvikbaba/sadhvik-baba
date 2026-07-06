@@ -16,10 +16,10 @@ export default function MetricCard({ value, label }: MetricCardProps) {
       whileHover={{ y: -2, transition: { duration: 0.2 } }}
       className="flex flex-col gap-1 p-4 rounded-xl border border-[var(--glass-card-border)] bg-[var(--glass-card-bg)] shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-shadow duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)]"
     >
-      <div className="text-2xl sm:text-3xl font-bold text-[var(--color-hero-heading)] font-sans tracking-tight flex items-baseline">
+      <div className="text-xl sm:text-2xl 2xl:text-3xl font-bold text-[var(--color-hero-heading)] font-sans tracking-tight flex items-baseline">
         {value}
       </div>
-      <div className="text-[10px] sm:text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+      <div className="text-[8px] sm:text-[10px] 2xl:text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
         {label}
       </div>
     </motion.div>

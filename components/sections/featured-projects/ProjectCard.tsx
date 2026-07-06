@@ -54,10 +54,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <div className="text-xs font-bold tracking-[0.2em] uppercase text-[var(--color-hero-accent)] mb-1.5 2xl:mb-2">
             {project.category}
           </div>
-          <h3 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[var(--color-hero-heading)] font-sans tracking-tight mb-3 2xl:mb-4">
+          <h3 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-extrabold text-[var(--color-hero-heading)] font-sans tracking-tight mb-3 2xl:mb-4">
             {project.title}
           </h3>
-          <p className="text-sm md:text-base text-[var(--color-hero-description)] leading-relaxed mb-5 2xl:mb-8 max-w-xl">
+          <p className="text-xs sm:text-sm 2xl:text-base text-[var(--color-hero-description)] leading-relaxed mb-5 2xl:mb-8 max-w-xl">
             {project.description}
           </p>
 
@@ -66,13 +66,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <h4 className="text-[10px] sm:text-xs font-bold tracking-wider uppercase text-slate-400 dark:text-slate-500 mb-3 2xl:mb-4">
               Engineering Highlights
             </h4>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-2 gap-y-2 2xl:gap-x-4 2xl:gap-y-3">
               {project.engineeringHighlights.map((hl, i) => {
                 const Icon = ICON_MAP[hl.icon] || FaBox;
                 return (
-                  <div key={i} className="flex items-center gap-3 text-sm text-[var(--color-hero-subtitle)] font-medium">
-                    <div className="w-6 h-6 rounded bg-[var(--color-hero-accent)]/10 text-[var(--color-hero-accent)] flex items-center justify-center shrink-0 shadow-sm border border-[var(--color-hero-accent)]/20">
-                      <Icon className="w-3 h-3" />
+                  <div key={i} className="flex items-center gap-2 2xl:gap-3 text-xs 2xl:text-sm text-[var(--color-hero-subtitle)] font-medium">
+                    <div className="w-5 h-5 2xl:w-6 2xl:h-6 rounded bg-[var(--color-hero-accent)]/10 text-[var(--color-hero-accent)] flex items-center justify-center shrink-0 shadow-sm border border-[var(--color-hero-accent)]/20">
+                      <Icon className="w-2.5 h-2.5 2xl:w-3 2xl:h-3" />
                     </div>
                     <span className="truncate">{hl.label}</span>
                   </div>
@@ -94,7 +94,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
 
           {/* Metrics */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-2 2xl:grid-cols-4 gap-3 2xl:gap-4 mb-6 2xl:mb-10">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 2xl:gap-4 mb-6 2xl:mb-10">
             {project.metrics.map((m, i) => (
               <MetricCard key={i} value={m.value} label={m.label} />
             ))}

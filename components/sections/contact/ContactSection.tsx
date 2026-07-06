@@ -10,7 +10,7 @@ import ContactForm from "./ContactForm";
 
 export default function ContactSection() {
   return (
-    <div className="relative w-full py-20 lg:py-32 overflow-hidden">
+    <div className="relative w-full py-16 2xl:py-32 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[var(--color-sky-main)] -z-10 transition-colors duration-500" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[var(--color-hero-accent)]/5 rounded-full blur-[120px] pointer-events-none -z-10" />
@@ -20,7 +20,7 @@ export default function ContactSection() {
 
       <div className="w-full px-6 md:px-16 lg:px-24">
         {/* Header Section */}
-        <div className="mb-10 lg:mb-16">
+        <div className="mb-6 2xl:mb-16">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -37,7 +37,7 @@ export default function ContactSection() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeUpVariant}
-            className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[var(--color-hero-heading)] mb-6 tracking-tight"
+            className="text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-extrabold text-[var(--color-hero-heading)] mb-3 2xl:mb-6 tracking-tight"
           >
             Let's Build Something <span className="text-[var(--color-hero-accent)] relative inline-block">
               Great
@@ -57,7 +57,7 @@ export default function ContactSection() {
         </div>
 
         {/* Split Layout */}
-        <div className="flex flex-col xl:flex-row gap-6 items-stretch">
+        <div className="flex flex-col xl:flex-row gap-4 2xl:gap-6 items-stretch">
 
           {/* Left Column (Profile/Info + Social) */}
           <motion.div
@@ -65,10 +65,10 @@ export default function ContactSection() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={slideLeftVariant}
-            className="w-full xl:w-[55%] flex flex-col gap-6"
+            className="w-full xl:w-[55%] flex flex-col gap-4 2xl:gap-6"
           >
             {/* Big Top Card: Profile & Info */}
-            <div className="flex-[2] p-4 md:p-6 rounded-[2rem] bg-[var(--color-glass-bg)] border border-[var(--color-glass-border)] shadow-xl flex flex-col md:flex-row items-stretch gap-0 relative overflow-hidden">
+            <div className="flex-[2] p-4 2xl:p-6 rounded-[2rem] bg-[var(--color-glass-bg)] border border-[var(--color-glass-border)] shadow-xl flex flex-col md:flex-row items-stretch gap-0 relative overflow-hidden">
               
               {/* Left Side: Profile */}
               <div className="w-full md:w-[42%] flex-shrink-0 flex flex-col justify-center md:pr-6">
@@ -98,7 +98,7 @@ export default function ContactSection() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="w-full h-full grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-10 relative z-20 py-2"
+                    className="w-full h-full grid grid-cols-1 sm:grid-cols-2 gap-y-6 2xl:gap-y-10 gap-x-6 2xl:gap-x-10 relative z-20 py-2"
                   >
                     <InfoCard label={INFO_ITEMS[0].label} value={INFO_ITEMS[0].value} icon={INFO_ITEMS[0].icon as any} />
                     <InfoCard label={INFO_ITEMS[1].label} value={INFO_ITEMS[1].value} icon={INFO_ITEMS[1].icon as any} />

@@ -42,5 +42,5 @@ export const INFO_ITEMS = [
   { label: "Location", value: "India", icon: "MapPin" },
   { label: "Response Time", value: "Usually within 24 Hours", icon: "Clock" },
   { label: "Open To", value: "Internships · Full-Time\nOpen Source", icon: "Briefcase" },
-  { label: "Current Focus", value: "Real-Time Systems\nDistributed Systems\nCloud Infrastructure", icon: "Target" },
+  { label: "Current Focus", value: "Distributed Systems & Cloud Architecture", icon: "Target" },
 ];
