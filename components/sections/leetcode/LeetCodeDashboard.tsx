@@ -147,14 +147,14 @@ export default function LeetCodeDashboard({ data }: LeetCodeDashboardProps) {
       {/* 1. TOP ROW: Header Area & Profile Details */}
       <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-6 w-full">
         <div className="flex flex-col items-start text-left max-w-2xl">
-          <span className={`text-[10px] uppercase tracking-[0.3em] font-extrabold mb-3 transition-colors duration-500 ${isDarkActive ? "text-[#71B7FF]" : "text-[#B57552]"}`}>
+          <span className={`text-[10px] uppercase tracking-[0.3em] font-extrabold mb-3 transition-colors duration-500 text-[var(--color-hero-accent)]`}>
             LeetCode Journey
           </span>
-          <h2 className={`text-4xl md:text-6xl font-extrabold tracking-tight mb-4.5 leading-tight transition-colors duration-500 font-sans ${isDarkActive ? "text-white" : "text-[#1E293B]"}`}>
-            Solving <span className={`transition-colors duration-500 ${isDarkActive ? "text-[#71B7FF]" : "text-[#B57552]"}`}>Beyond Limits</span>
+          <h2 className={`text-4xl md:text-6xl font-extrabold tracking-tight mb-4.5 leading-tight transition-colors duration-500 font-sans text-[var(--color-hero-heading)]`}>
+            Solving <span className={`transition-colors duration-500 text-[var(--color-hero-accent)]`}>Beyond Limits</span>
           </h2>
-          <div className={`w-16 h-1.5 rounded-full mb-6 transition-colors duration-500 ${isDarkActive ? "bg-[#71B7FF]" : "bg-[#B57552]"}`} />
-          <p className={`text-base md:text-lg leading-relaxed transition-colors duration-500 font-sans ${isDarkActive ? "text-[#90A7C7]" : "text-[#475569]"}`}>
+          <div className={`w-16 h-1.5 rounded-full mb-6 transition-colors duration-500 bg-[var(--color-hero-accent)]`} />
+          <p className={`text-base md:text-lg leading-relaxed transition-colors duration-500 font-sans text-[var(--color-hero-description)]`}>
             Every problem solved is another step toward becoming a better engineer. Consistency, discipline, and curiosity continue to shape my problem-solving journey.
           </p>
         </div>
@@ -240,14 +240,14 @@ export default function LeetCodeDashboard({ data }: LeetCodeDashboardProps) {
 
       {/* 5. BOTTOM CTA ROW */}
       <div className="flex flex-col sm:flex-row items-center justify-end gap-4 w-full mt-4 self-end text-right">
-        <span className={`text-xs md:text-sm font-semibold tracking-wide font-sans ${isDarkActive ? "text-slate-400" : "text-[#7A6960]"}`}>
+        <span className={`text-xs md:text-sm font-semibold tracking-wide font-sans text-[var(--color-hero-subtitle)]`}>
           Let's keep pushing boundaries.
         </span>
         <a
           href={`https://leetcode.com/u/${data.username}/`}
           target="_blank"
           rel="noopener noreferrer"
-          className={`inline-flex items-center gap-2 py-3 px-6 rounded-xl text-xs md:text-sm font-bold tracking-wide transition-all duration-300 hover:scale-[1.03] active:scale-95 cursor-pointer shadow-lg border ${isDarkActive ? "bg-[#0B182C]/82 text-white border-[#71B7FF]/20 hover:bg-[#1A355A] hover:border-[#71B7FF]/40 shadow-none" : "bg-[#1E1B18] text-white hover:bg-[#3D3330] border-transparent shadow-black/10"}`}
+          className={`inline-flex items-center gap-2 py-3 px-6 rounded-xl text-xs md:text-sm font-bold tracking-wide transition-all duration-300 hover:scale-[1.03] active:scale-95 cursor-pointer border bg-[var(--color-hero-button-bg)] text-[var(--color-hero-button-text)] hover:bg-[var(--color-hero-button-hover)] border-[var(--color-hero-button-border)] shadow-[0_4px_16px_var(--color-hero-button-shadow)] hover:shadow-lg hover:border-[var(--color-hero-accent)]/30`}
         >
           <span>View LeetCode Profile</span>
           <FaExternalLinkAlt className="w-3 h-3 opacity-90" />

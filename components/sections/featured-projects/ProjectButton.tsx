@@ -28,11 +28,11 @@ export default function ProjectButton({ type, label, href }: ProjectButtonProps)
       className={`group relative flex items-center justify-center gap-1.5 2xl:gap-2 px-3 py-2 2xl:px-5 2xl:py-2.5 rounded-xl font-medium text-[10px] 2xl:text-sm transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]
         ${isPrimary 
           ? "bg-[var(--color-hero-button-bg)] text-[var(--color-hero-button-text)] shadow-[var(--color-hero-button-shadow)] hover:bg-[var(--color-hero-button-hover)] hover:shadow-lg" 
-          : "bg-slate-100/50 dark:bg-slate-800/50 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-200/50 dark:hover:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-600"
+          : "bg-[var(--color-glass-bg)] text-[var(--color-hero-subtitle)] border border-[var(--color-glass-border)] hover:text-[var(--color-hero-heading)]"
         }
       `}
     >
-      <Icon className={`w-3 h-3 2xl:w-4 2xl:h-4 ${isPrimary ? "text-[var(--color-hero-button-text)]" : "text-slate-500 dark:text-slate-400 group-hover:text-slate-700 dark:group-hover:text-slate-200"} transition-colors`} />
+      <Icon className={`w-3 h-3 2xl:w-4 2xl:h-4 ${isPrimary ? "text-[var(--color-hero-button-text)]" : "text-[var(--color-hero-description)] group-hover:text-[var(--color-hero-heading)]"} transition-colors`} />
       <span>{label}</span>
       
       {/* Subtle hover glow for primary button */}

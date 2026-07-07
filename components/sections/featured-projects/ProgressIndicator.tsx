@@ -29,7 +29,7 @@ export default function ProgressIndicator({ items, scrollYProgress }: ProgressIn
           <div key={item.id} className="flex flex-col gap-1.5 transition-all duration-500">
             <div 
               className={`text-[10px] font-mono font-bold tracking-widest transition-colors duration-300 
-                ${isActive ? "text-[var(--color-hero-accent)]" : isPast ? "text-slate-400 dark:text-slate-500" : "text-slate-300/50 dark:text-slate-700/50"}
+                ${isActive ? "text-[var(--color-hero-accent)]" : isPast ? "text-[var(--color-hero-subtitle)]" : "text-[var(--color-hero-description)] opacity-50"}
               `}
             >
               {item.id}
@@ -37,14 +37,14 @@ export default function ProgressIndicator({ items, scrollYProgress }: ProgressIn
             
             <div 
               className={`text-xs font-sans font-bold tracking-wide transition-all duration-300 whitespace-nowrap 
-                ${isActive ? "text-[var(--color-hero-heading)] translate-x-1" : isPast ? "text-slate-400 dark:text-slate-500" : "text-slate-300/50 dark:text-slate-700/50"}
+                ${isActive ? "text-[var(--color-hero-heading)] translate-x-1" : isPast ? "text-[var(--color-hero-subtitle)]" : "text-[var(--color-hero-description)] opacity-50"}
               `}
             >
               {item.title}
             </div>
 
             {/* Linear-style line indicator */}
-            <div className="relative w-12 h-[2px] rounded-full overflow-hidden bg-slate-200 dark:bg-slate-800">
+            <div className="relative w-12 h-[2px] rounded-full overflow-hidden bg-[var(--color-glass-border)]">
               {isActive && (
                 <motion.div 
                   layoutId="activeProgressLine"

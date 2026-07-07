@@ -6,16 +6,16 @@ import { motionConfig } from "../motion/motionConfig";
 
 interface TechnologyPillProps {
   name: string;
-  isHighlighted: boolean;
-  isDimmed: boolean;
-  onMouseEnter: () => void;
-  onMouseLeave: () => void;
+  isHighlighted?: boolean;
+  isDimmed?: boolean;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
 
 export default function TechnologyPill({
   name,
-  isHighlighted,
-  isDimmed,
+  isHighlighted = false,
+  isDimmed = false,
   onMouseEnter,
   onMouseLeave,
 }: TechnologyPillProps) {
@@ -30,9 +30,9 @@ export default function TechnologyPill({
         ${
           isHighlighted
             ? "bg-[color-mix(in_srgb,var(--color-hero-accent)_20%,transparent)] border-[var(--color-hero-accent)] text-[var(--color-hero-accent)] shadow-[0_0_12px_rgba(var(--color-hero-accent),0.25)] scale-[1.03] -translate-y-0.5"
-            : isDimmed
-            ? "bg-slate-800/10 dark:bg-slate-900/20 border-slate-700/10 dark:border-slate-800/20 text-slate-500/60 dark:text-slate-500/40 opacity-50 scale-[0.98]"
-            : "bg-slate-100/60 dark:bg-slate-900/40 border-slate-200 dark:border-slate-800/80 text-slate-700 dark:text-slate-300 hover:border-[var(--color-hero-accent)] hover:text-[var(--color-hero-accent)] hover:bg-[color-mix(in_srgb,var(--color-hero-accent)_8%,transparent)]"
+          : isDimmed 
+            ? "bg-[var(--color-glass-bg)] opacity-30 border-[var(--color-glass-border)] text-[var(--color-hero-subtitle)] scale-[0.98]"
+            : "bg-[var(--color-glass-bg)] border-[var(--color-glass-border)] text-[var(--color-hero-subtitle)] hover:border-[var(--color-hero-accent)] hover:text-[var(--color-hero-accent)] hover:bg-[color-mix(in_srgb,var(--color-hero-accent)_8%,transparent)]"
         }
       `}
       style={{

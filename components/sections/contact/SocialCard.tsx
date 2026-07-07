@@ -10,9 +10,10 @@ interface SocialCardProps {
   description: string;
   icon: IconType;
   href: string;
+  isFeatured?: boolean;
 }
 
-export default function SocialCard({ title, description, icon: Icon, href }: SocialCardProps) {
+export default function SocialCard({ title, description, icon: Icon, href, isFeatured }: SocialCardProps) {
   return (
     <motion.a
       href={href}
@@ -20,18 +21,18 @@ export default function SocialCard({ title, description, icon: Icon, href }: Soc
       rel="noopener noreferrer"
       variants={scaleFadeVariant}
       whileHover={{ y: -4 }}
-      className="group relative flex flex-col justify-between p-4 md:p-5 rounded-2xl bg-[var(--color-glass-bg)] border border-[var(--color-glass-border)] hover:border-[var(--color-hero-accent)]/50 transition-colors duration-300 overflow-hidden min-h-[140px] h-full"
+      className={`group relative flex flex-col justify-between p-4 md:p-5 rounded-2xl bg-[var(--color-glass-bg)] border border-[var(--color-glass-border)] hover:border-[var(--color-hero-accent)]/50 transition-colors duration-300 overflow-hidden min-h-[140px] h-full ${isFeatured ? "col-span-2 sm:col-span-1" : ""}`}
     >
       <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-hero-accent)]/0 to-[var(--color-hero-accent)]/0 group-hover:from-[var(--color-hero-accent)]/5 group-hover:to-transparent transition-all duration-500" />
       
       <div className="relative z-10 flex flex-col gap-3">
-        <div className="w-8 h-8 rounded-full flex items-center justify-center bg-[var(--color-hero-accent)]/10 text-[var(--color-hero-accent)]">
-          <Icon className="w-4 h-4" />
+        <div className={`rounded-full flex items-center justify-center bg-[var(--color-hero-accent)]/10 text-[var(--color-hero-accent)] ${isFeatured ? "w-10 h-10 sm:w-8 sm:h-8" : "w-8 h-8"}`}>
+          <Icon className={isFeatured ? "w-5 h-5 sm:w-4 sm:h-4" : "w-4 h-4"} />
         </div>
         
         <div className="flex flex-col">
-          <h3 className="font-bold text-sm text-[var(--color-hero-heading)]">{title}</h3>
-          <p className="text-[10px] md:text-[11px] text-[var(--color-hero-description)] truncate leading-tight mt-1">{description}</p>
+          <h3 className={`font-bold text-[var(--color-hero-heading)] ${isFeatured ? "text-base sm:text-sm" : "text-sm"}`}>{title}</h3>
+          <p className={`text-[var(--color-hero-description)] truncate leading-tight mt-1 ${isFeatured ? "text-xs sm:text-[10px] md:text-[11px]" : "text-[10px] md:text-[11px]"}`}>{description}</p>
         </div>
       </div>
 

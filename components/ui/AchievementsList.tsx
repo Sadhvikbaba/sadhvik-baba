@@ -97,7 +97,7 @@ export default function AchievementsList({
       list.push({
         title: "First Steps",
         subtitle: "Curiosity and consistency are forming.",
-        icon: <FaTrophy className="w-4 h-4 text-slate-400" />
+        icon: <FaTrophy className="w-4 h-4 text-[var(--color-hero-subtitle)]" />
       });
     }
 
@@ -112,7 +112,7 @@ export default function AchievementsList({
       whileHover={{ y: -4, transition: { duration: 0.2 } }}
       className="w-full p-5 md:p-6 rounded-[24px] border border-[var(--glass-card-border)] bg-[var(--glass-card-bg)] shadow-sm hover:shadow-md transition-shadow duration-300 select-none flex flex-col items-start"
     >
-      <span className="text-xs font-bold mb-5 uppercase tracking-wider text-slate-400 font-sans">
+      <span className="text-xs font-bold mb-5 uppercase tracking-wider text-[var(--color-hero-subtitle)] font-sans">
         Recent Achievements
       </span>
 
@@ -120,7 +120,7 @@ export default function AchievementsList({
         {achievements.map((ach, idx) => (
           <div key={idx} className="flex items-center gap-4 w-full">
             {/* Icon Frame */}
-            <div className="w-9 h-9 rounded-xl flex items-center justify-center bg-[#E6E1D3]/20 dark:bg-slate-800/40 border border-[#E6E1D3] dark:border-slate-700/30 flex-shrink-0">
+            <div className="w-9 h-9 rounded-xl flex items-center justify-center bg-[var(--color-glass-bg)] border border-[var(--color-glass-border)] flex-shrink-0">
               {ach.icon}
             </div>
             
@@ -129,7 +129,7 @@ export default function AchievementsList({
               <span className="text-xs font-bold text-[var(--color-hero-heading)] font-sans leading-tight">
                 {ach.title}
               </span>
-              <span className="text-[10px] text-slate-500 font-mono mt-0.5 leading-none">
+              <span className="text-[10px] text-[var(--color-hero-description)] font-mono mt-0.5 leading-none">
                 {ach.subtitle}
               </span>
             </div>

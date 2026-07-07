@@ -19,9 +19,9 @@ export default function TechPill({ name }: TechPillProps) {
       }}
       whileTap={{ scale: 0.98 }}
       className="px-3 py-1.5 rounded-full text-xs font-medium cursor-pointer transition-all duration-300 select-none border 
-        bg-slate-100/60 dark:bg-slate-900/40 
-        border-slate-200 dark:border-slate-800/80 
-        text-slate-700 dark:text-slate-300 
+        bg-[var(--color-glass-bg)] 
+        border-[var(--color-glass-border)] 
+        text-[var(--color-hero-subtitle)] 
         hover:border-[var(--color-hero-accent)] 
         hover:text-[var(--color-hero-accent)] 
         hover:bg-[color-mix(in_srgb,var(--color-hero-accent)_8%,transparent)]

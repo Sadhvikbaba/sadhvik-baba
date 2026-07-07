@@ -41,8 +41,8 @@ export default function MetricCard({
   label,
   subtitle,
   tooltipText,
-  iconBgColor = "bg-slate-500/10",
-  iconColor = "text-slate-300"
+  iconBgColor = "bg-[var(--color-glass-border)]",
+  iconColor = "text-[var(--color-hero-subtitle)]"
 }: MetricCardProps) {
   return (
     <motion.div
@@ -54,10 +54,10 @@ export default function MetricCard({
     >
       {/* Tooltip trigger wrapper */}
       {tooltipText && (
-        <div className="absolute opacity-0 group-hover:opacity-100 pointer-events-none bottom-[105%] left-1/2 -translate-x-1/2 w-48 p-2 text-[10px] font-medium leading-normal bg-[#FAF7F2] dark:bg-slate-950 text-[#1E293B] dark:text-slate-200 border border-[#E6E1D3] dark:border-slate-800 rounded-lg shadow-xl backdrop-blur-md transition-opacity duration-300 z-50 text-center">
+        <div className="absolute opacity-0 group-hover:opacity-100 pointer-events-none bottom-[105%] left-1/2 -translate-x-1/2 w-48 p-2 text-[10px] font-medium leading-normal bg-[var(--site-bg)] text-[var(--color-hero-heading)] border border-[var(--color-glass-border)] rounded-lg shadow-xl backdrop-blur-md transition-opacity duration-300 z-50 text-center">
           {tooltipText}
           {/* Arrow */}
-          <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#FAF7F2] dark:border-t-slate-950" />
+          <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[var(--site-bg)]" />
         </div>
       )}
 
@@ -77,13 +77,13 @@ export default function MetricCard({
       </span>
 
       {/* Title */}
-      <span className="text-[11px] md:text-xs font-bold mb-1 uppercase tracking-wider text-slate-400 block">
+      <span className="text-[11px] md:text-xs font-bold mb-1 uppercase tracking-wider text-[var(--color-hero-subtitle)] block">
         {label}
       </span>
 
       {/* Detail Label / Subtitle */}
       {subtitle && (
-        <span className="text-[10px] md:text-[11px] text-slate-500 font-mono block">
+        <span className="text-[10px] md:text-[11px] text-[var(--color-hero-description)] font-mono block">
           {subtitle}
         </span>
       )}

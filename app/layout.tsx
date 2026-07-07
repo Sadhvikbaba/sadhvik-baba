@@ -25,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="font-sans antialiased overflow-x-hidden w-full min-h-screen bg-white">
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} overflow-x-hidden md:overflow-x-visible max-w-[100vw] md:max-w-none`}>
+      <body className="font-sans antialiased w-full min-h-screen bg-white overflow-x-hidden md:overflow-x-visible max-w-[100vw] md:max-w-none">
         <LoaderProvider>
           <SmoothScroll>
             {children}

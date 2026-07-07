@@ -119,7 +119,7 @@ export default function ContactSection() {
               className="flex-1 grid grid-cols-2 sm:grid-cols-5 gap-4"
             >
               {SOCIAL_LINKS.map((link) => (
-                <SocialCard key={link.id} {...link} />
+                <SocialCard key={link.id} {...link} isFeatured={link.id === "resume"} />
               ))}
             </motion.div>
           </motion.div>

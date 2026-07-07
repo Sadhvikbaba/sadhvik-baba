@@ -44,42 +44,54 @@
 }
 
 .dark {
-  /* Dark Theme */
-  --sky-main: #08111F;
-  --sky-top: #091626;
-  --sky-bottom: #050B14;
-  
-  --hero-heading: #F2F7FF;
-  --hero-heading-gradient-start: #FFFFFF;
-  --hero-heading-gradient-mid: #DCE9FF;
-  --hero-heading-gradient-end: #A8C8FF;
-  
-  --hero-subtitle: #C8D9F7;
-  --hero-description: #90A7C7;
-  --hero-accent: #71B7FF;
-  
-  --hero-button-bg: rgba(11, 24, 44, 0.82);
-  --hero-button-hover: #1A355A;
-  --hero-button-text: #FFFFFF;
-  --hero-button-border: rgba(125, 180, 255, 0.22);
-  --hero-button-shadow: rgba(5, 10, 18, 0.55);
-  
-  --hero-overlay-start: rgba(5, 10, 18, 0.55);
-  --hero-overlay-mid: rgba(5, 10, 18, 0.22);
+  /* Background */
+  --sky-main: #0B1220;
+  --sky-top: #101A2D;
+  --sky-bottom: #070D17;
+
+  /* Heading */
+  --hero-heading: #EEF3FB;
+
+  /* Gradient */
+  --hero-heading-gradient-start: #F6F8FC;
+  --hero-heading-gradient-mid: #D5DFEC;
+  --hero-heading-gradient-end: #A8B7CC;
+
+  /* Text */
+  --hero-subtitle: #B8C4D6;
+  --hero-description: #8C9BB0;
+
+  /* Accent */
+  --hero-accent: #8DAED1;
+
+  /* Buttons */
+  --hero-button-bg: rgba(18, 27, 42, 0.88);
+  --hero-button-hover: #22344E;
+  --hero-button-text: #F8FAFC;
+  --hero-button-border: rgba(180, 195, 215, 0.12);
+  --hero-button-shadow: rgba(0, 0, 0, 0.35);
+
+  /* Overlay */
+  --hero-overlay-start: rgba(7, 13, 23, 0.68);
+  --hero-overlay-mid: rgba(7, 13, 23, 0.30);
   --hero-overlay-end: transparent;
-  
-  --toggle-bg: #0E1B2ECC;
-  --toggle-border: #2A466F;
-  --toggle-icon: #FFD86B;
-  
-  --scroll-line: #547DB8;
-  --scroll-dot: #A7CCFF;
-  
-  --glass-card-bg: rgba(8, 17, 31, 0.48);
-  --glass-card-border: rgba(125, 180, 255, 0.12);
-  
-  --site-bg: #08111F;
-  --site-text: #F2F7FF;
+
+  /* Toggle */
+  --toggle-bg: rgba(17, 25, 39, 0.75);
+  --toggle-border: rgba(120, 136, 160, 0.25);
+  --toggle-icon: #E7D9A3;
+
+  /* Scrollbar */
+  --scroll-line: #566C89;
+  --scroll-dot: #91A7C4;
+
+  /* Glass */
+  --glass-card-bg: rgba(15, 23, 38, 0.55);
+  --glass-card-border: rgba(190, 205, 224, 0.08);
+
+  /* Base */
+  --site-bg: #0B1220;
+  --site-text: #EEF3FB;
 }
 
 @theme {

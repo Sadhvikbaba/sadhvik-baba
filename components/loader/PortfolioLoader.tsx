@@ -139,7 +139,7 @@ export default function PortfolioLoader({ onComplete }: PortfolioLoaderProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-[9999] flex items-center justify-center"
+            className="fixed inset-0 z-[9999] flex items-center justify-center h-[100dvh] w-screen"
             style={{ background: "var(--sky-main)" }}
           >
             <div style={{ width: logoSize, height: logoSize }}>
@@ -162,7 +162,7 @@ export default function PortfolioLoader({ onComplete }: PortfolioLoaderProps) {
           initial="hidden"
           animate="visible"
           exit="exit"
-          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center overflow-hidden select-none"
+          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center overflow-hidden select-none h-[100dvh] w-screen"
           style={{ background: "var(--sky-main)" }}
         >
           {/* ── Background radial glow ─────────────────────────────────────── */}

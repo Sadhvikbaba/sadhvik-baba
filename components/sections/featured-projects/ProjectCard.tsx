@@ -63,7 +63,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
           {/* Engineering Highlights */}
           <div className="mb-5 2xl:mb-8">
-            <h4 className="text-[10px] sm:text-xs font-bold tracking-wider uppercase text-slate-400 dark:text-slate-500 mb-3 2xl:mb-4">
+            <h4 className="text-[10px] sm:text-xs font-bold tracking-wider uppercase text-[var(--color-hero-subtitle)] mb-3 2xl:mb-4">
               Engineering Highlights
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-2 gap-y-2 2xl:gap-x-4 2xl:gap-y-3">
@@ -83,7 +83,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
           {/* Tech Stack */}
           <div className="mb-5 2xl:mb-8">
-            <h4 className="text-[10px] sm:text-xs font-bold tracking-wider uppercase text-slate-400 dark:text-slate-500 mb-3 2xl:mb-4">
+            <h4 className="text-[10px] sm:text-xs font-bold tracking-wider uppercase text-[var(--color-hero-subtitle)] mb-3 2xl:mb-4">
               Tech Stack
             </h4>
             <div className="flex flex-wrap gap-2">

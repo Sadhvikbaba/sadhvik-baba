@@ -21,7 +21,7 @@ export default function FeaturedProjects() {
       ref={sectionRef}
       id="projects"
       aria-label="Featured Projects"
-      className="relative w-full border-b border-[#E6E1D3]/50 dark:border-slate-900/40 bg-[var(--site-bg)]"
+      className="relative w-full border-b border-[var(--color-glass-border)] bg-[var(--site-bg)]"
     >
       {/* ── DESKTOP / TABLET: Horizontal Scroll ── */}
       <div 
@@ -53,7 +53,7 @@ export default function FeaturedProjects() {
       </div>
 
       {/* ── MOBILE: Vertical Stack ── */}
-      <div className="md:hidden flex flex-col gap-12 py-16 z-10 relative">
+      <div className="md:hidden flex flex-col gap-12 py-16 z-10 relative overflow-hidden w-full max-w-[100vw]">
         <div className="px-6 text-left">
           <span className="text-[10px] uppercase tracking-[0.3em] font-extrabold mb-3 text-[var(--color-hero-accent)] flex items-center gap-2">
             Featured Projects

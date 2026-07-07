@@ -74,7 +74,7 @@ export default function PageNavigation() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
-          className="hidden md:flex fixed left-6 lg:left-10 top-1/2 -translate-y-1/2 z-50 py-6 px-2 rounded-[2rem] bg-[#F5F2EB]/60 dark:bg-[#0A1424]/60 backdrop-blur-xl border border-[#E6E1D3]/50 dark:border-slate-800/60 shadow-[0_8px_32px_rgba(0,0,0,0.05)] group transition-all duration-500 hover:shadow-[0_16px_48px_rgba(0,0,0,0.1)] flex-col gap-1"
+          className="hidden md:flex fixed left-6 lg:left-10 top-1/2 -translate-y-1/2 z-50 py-6 px-2 rounded-[2rem] bg-[var(--color-glass-bg)] backdrop-blur-xl border border-[var(--color-glass-border)] shadow-[0_8px_32px_rgba(0,0,0,0.05)] group transition-all duration-500 hover:shadow-[0_16px_48px_rgba(0,0,0,0.1)] flex-col gap-1"
         >
           {NAV_ITEMS.map((item) => {
             const isActive = activeSection === item.href.replace('#', '');
@@ -94,14 +94,14 @@ export default function PageNavigation() {
                 )}
                 
                 {/* Number */}
-                <span className={`relative z-10 font-mono text-sm font-bold transition-colors duration-300 ${isActive ? 'text-[var(--color-hero-accent)]' : 'text-slate-400 dark:text-slate-500'}`}>
+                <span className={`relative z-10 font-mono text-sm font-bold transition-colors duration-300 ${isActive ? 'text-[var(--color-hero-accent)]' : 'text-[var(--color-hero-subtitle)]'}`}>
                   {item.id}
                 </span>
                 
                 {/* Line and Title (Revealed on Group Hover) */}
                 <div className="flex items-center gap-4 overflow-hidden max-w-0 opacity-0 group-hover:max-w-[200px] group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
-                  <div className={`h-[1px] w-6 shrink-0 transition-colors duration-300 ${isActive ? 'bg-[var(--color-hero-accent)]' : 'bg-slate-300 dark:bg-slate-600'}`} />
-                  <span className={`text-xs font-bold uppercase tracking-[0.15em] whitespace-nowrap transition-colors duration-300 ${isActive ? 'text-[var(--color-hero-heading)]' : 'text-slate-400 dark:text-slate-500'}`}>
+                  <div className={`h-[1px] w-6 shrink-0 transition-colors duration-300 ${isActive ? 'bg-[var(--color-hero-accent)]' : 'bg-[var(--color-glass-border)]'}`} />
+                  <span className={`text-xs font-bold uppercase tracking-[0.15em] whitespace-nowrap transition-colors duration-300 ${isActive ? 'text-[var(--color-hero-heading)]' : 'text-[var(--color-hero-subtitle)]'}`}>
                     {item.title}
                   </span>
                 </div>
@@ -118,7 +118,7 @@ export default function PageNavigation() {
             y: isScrollingDown ? 50 : 0 
           }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-1 p-1.5 rounded-full bg-[#F5F2EB]/90 dark:bg-[#0A1424]/90 backdrop-blur-xl border border-[#E6E1D3]/80 dark:border-slate-700 shadow-[0_8px_32px_rgba(0,0,0,0.1)] overflow-x-auto max-w-[90vw]"
+          className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-1 p-1.5 rounded-full bg-[var(--color-glass-bg)] backdrop-blur-xl border border-[var(--color-glass-border)] shadow-[0_8px_32px_rgba(0,0,0,0.1)] overflow-x-auto max-w-[calc(100vw-2rem)] w-[max-content] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           {NAV_ITEMS.map((item) => {
             const isActive = activeSection === item.href.replace('#', '');
@@ -135,7 +135,7 @@ export default function PageNavigation() {
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
                 )}
-                <span className={`relative z-10 font-mono text-sm font-bold transition-colors duration-300 ${isActive ? 'text-[var(--color-hero-accent)]' : 'text-slate-500 dark:text-slate-400'}`}>
+                <span className={`relative z-10 font-mono text-sm font-bold transition-colors duration-300 ${isActive ? 'text-[var(--color-hero-accent)]' : 'text-[var(--color-hero-subtitle)]'}`}>
                   {item.id}
                 </span>
               </div>

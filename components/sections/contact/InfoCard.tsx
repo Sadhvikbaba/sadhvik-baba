@@ -20,8 +20,8 @@ export default function InfoCard({ label, value, icon, className = "" }: InfoCar
   const Icon = iconMap[icon];
 
   return (
-    <div className={`flex items-center justify-center w-full h-full p-2 md:p-4 transition-transform hover:-translate-y-1 ${className}`}>
-      <div className="flex items-start gap-4 w-fit">
+    <div className={`flex items-center justify-start sm:justify-center w-full h-full p-2 md:p-4 transition-transform hover:-translate-y-1 ${className}`}>
+      <div className="flex items-start gap-4 w-full sm:w-fit">
         <div className="w-10 h-10 mt-0.5 rounded-full flex items-center justify-center text-[var(--color-hero-accent)] border border-[var(--color-hero-accent)]/30 shrink-0 shadow-[0_0_10px_rgba(var(--color-hero-accent-rgb),0.05)] bg-[var(--color-hero-accent)]/5">
           <Icon className="w-4 h-4 md:w-5 md:h-5" />
         </div>

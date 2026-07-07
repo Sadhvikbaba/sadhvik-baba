@@ -39,7 +39,7 @@ export default function EngineeringToolbox() {
     <section
       id="toolbox"
       aria-label="The Engineering Toolbox"
-      className="relative z-30 w-full min-h-screen py-16 lg:py-24 bg-[var(--sky-main)] transition-colors duration-500 flex items-center justify-center border-b border-[#E6E1D3]/50 dark:border-slate-900/40"
+      className="relative z-30 w-full min-h-screen py-16 lg:py-24 bg-[var(--sky-main)] transition-colors duration-500 flex items-center justify-center border-b border-[var(--color-glass-border)]"
     >
       {/* Visual Accent - subtle ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vh] rounded-full blur-3xl pointer-events-none z-0 bg-[color-mix(in_srgb,var(--color-hero-accent)_3%,transparent)]" />
