@@ -63,7 +63,7 @@ export default function Hero() {
       >
         <button
           onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-          className={`relative rounded-full bg-toggle-bg border border-toggle-border backdrop-blur-md hover:scale-[1.06] active:scale-95 transition-all duration-500 flex items-center justify-center cursor-pointer shadow-lg group overflow-hidden ${isScrolled ? "w-10 h-10 md:w-12 md:h-12 animate-fade-in" : "w-16 h-16 md:w-20 md:h-20"
+          className={`relative rounded-full bg-toggle-bg hover:scale-[1.06] active:scale-95 transition-all duration-500 flex items-center justify-center cursor-pointer border-[0.1px] border-gray-400 dark:border-gray-700 group overflow-hidden ${isScrolled ? "w-10 h-10 md:w-12 md:h-12 animate-fade-in" : "w-16 h-16 md:w-20 md:h-20"
             }`}
           aria-label="Toggle theme"
         >
@@ -148,7 +148,7 @@ export default function Hero() {
                   transform: theme === "light" ? "none" : "scale(0.5) rotate(45deg)"
                 }}
               >
-                <g className="hero-sun-rays">
+                <g className="hero-sun-rays" style={{ transformOrigin: "50px 50px", animation: "spin 15s linear infinite" }}>
                   <line x1="74" y1="50" x2="81" y2="50" stroke="#ffce80" strokeWidth="2.4" strokeLinecap="round" opacity="0.92" />
                   <line x1="70.78460969082653" y1="62" x2="76.84678751731761" y2="65.5" stroke="#ffce80" strokeWidth="2.4" strokeLinecap="round" opacity="0.92" />
                   <line x1="62" y1="70.78460969082653" x2="65.5" y2="76.8467875173176" stroke="#ffce80" strokeWidth="2.4" strokeLinecap="round" opacity="0.92" />

@@ -51,7 +51,7 @@ export default function CredentialsSection() {
             variants={fadeIn}
             className="flex flex-col w-full lg:w-[55%] max-w-2xl relative z-10"
           >
-            <span className="text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase mb-4 text-[var(--color-hero-subtitle)]">
+            <span className="text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase mb-4 text-[var(--color-hero-accent)]">
               Certifications
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--color-hero-heading)] mb-6 leading-[1.1]">
@@ -68,7 +68,7 @@ export default function CredentialsSection() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={parallaxMountain}
-            className="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[700px] lg:w-[45%] aspect-[16/9] md:aspect-[950/270] mx-auto md:mx-0 opacity-80 pointer-events-none relative flex-shrink-0 grayscale mix-blend-multiply dark:mix-blend-screen"
+            className="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[700px] lg:w-[45%] aspect-[16/9] md:aspect-[950/270] mx-auto md:mx-0  pointer-events-none relative flex-shrink-0 grayscale mix-blend-multiply dark:mix-blend-screen"
           >
             <Image 
               src={theme === "dark" ? CERTIFICATION_ILLUSTRATIONS.dark : CERTIFICATION_ILLUSTRATIONS.light}

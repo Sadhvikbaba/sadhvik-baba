@@ -165,20 +165,18 @@ export default function AboutMe() {
           {/* Glowing Sunburst Shadow Behind Profile */}
           <div className={`absolute w-[240px] h-[240px] md:w-[280px] md:h-[280px] rounded-full blur-3xl z-0 pointer-events-none bg-[color-mix(in_srgb,var(--color-hero-accent)_5%,transparent)]`} />
 
-          {/* Profile Frame with Silhouette Placeholder */}
+          {/* Profile Frame with User Photo */}
           <div className={`relative w-[240px] h-[240px] md:w-[300px] md:h-[300px] rounded-full z-10 overflow-hidden border shadow-inner flex items-center justify-center group border-[var(--color-glass-border)] bg-[var(--color-glass-bg)] bg-gradient-to-tr from-[var(--color-glass-bg)] to-transparent`}>
             
             {/* Animated shimmer overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 dark:via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
             
-            {/* Silhouette vector skeleton */}
-            <svg
-              className={`w-38 h-38 transition-colors duration-500 animate-pulse text-[var(--color-hero-accent)] opacity-20`}
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-            </svg>
+            {/* User photo */}
+            <img
+              src="/me.png"
+              alt="Sadhvik Baba"
+              className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+            />
             
             {/* Glowing ring borders */}
             <div className={`absolute inset-0.5 rounded-full border border-dashed pointer-events-none border-[var(--color-hero-accent)] opacity-20`} />

@@ -9,6 +9,7 @@ interface ProjectButtonProps {
   type: ButtonType;
   label: string;
   href: string;
+  target?: string;
 }
 
 const icons = {
@@ -18,13 +19,14 @@ const icons = {
   architecture: FaProjectDiagram,
 };
 
-export default function ProjectButton({ type, label, href }: ProjectButtonProps) {
+export default function ProjectButton({ type, label, href , target = "_self"}: ProjectButtonProps) {
   const Icon = icons[type];
   const isPrimary = type === "demo";
 
   return (
     <Link 
       href={href}
+      target={target}
       className={`group relative flex items-center justify-center gap-1.5 2xl:gap-2 px-3 py-2 2xl:px-5 2xl:py-2.5 rounded-xl font-medium text-[10px] 2xl:text-sm transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]
         ${isPrimary 
           ? "bg-[var(--color-hero-button-bg)] text-[var(--color-hero-button-text)] shadow-[var(--color-hero-button-shadow)] hover:bg-[var(--color-hero-button-hover)] hover:shadow-lg" 

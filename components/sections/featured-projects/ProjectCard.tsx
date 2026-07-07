@@ -103,7 +103,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           {/* Buttons */}
           <div className="flex flex-wrap gap-3">
             {project.buttons.map((btn, i) => (
-              <ProjectButton key={i} type={btn.type} label={btn.label} href={btn.href} />
+              <ProjectButton key={i} type={btn.type} label={btn.label} href={btn.href} target={btn.target}/>
             ))}
           </div>
         </div>

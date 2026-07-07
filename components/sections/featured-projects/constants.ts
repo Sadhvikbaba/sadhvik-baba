@@ -24,6 +24,7 @@ export interface ProjectButtonData {
   type: ButtonType;
   label: string;
   href: string;
+  target?: string;
 }
 
 export interface Project {
@@ -59,18 +60,18 @@ export const FEATURED_PROJECTS: Project[] = [
       { icon: "sync", label: "Real-Time Code Sync" },
       { icon: "video", label: "WebRTC Video & Audio" },
       { icon: "edit", label: "Monaco Editor" },
-      { icon: "server", label: "MediaSoup SFU" },
-      { icon: "database", label: "Redis Pub/Sub" },
-      { icon: "box", label: "Dockerized Services" },
+      { icon: "server", label: "LIVEKIT" },
+      { icon: "database", label: "Integrated chat" },
+      { icon: "box", label: "File sharing" },
     ],
     techStack: [
       "Next.js",
       "TypeScript",
       "Node.js",
       "Redis",
-      "MediaSoup",
-      "Docker",
-      "PostgreSQL",
+      "LIVEKIT",
+      "Web Sockets",
+      "Web RTC",
     ],
     metrics: [
       { value: "50+", label: "Concurrent Users" },
@@ -79,10 +80,10 @@ export const FEATURED_PROJECTS: Project[] = [
       { value: "99.9%", label: "Uptime" },
     ],
     buttons: [
-      { type: "demo", label: "Live Demo", href: "https://code-fudji.vercel.app" },
-      { type: "github", label: "GitHub", href: "#" },
-      { type: "casestudy", label: "Case Study", href: "#" },
-      { type: "architecture", label: "Architecture", href: "/projects/code-fudji" },
+      { type: "demo", label: "Live Demo", href: "https://code-fudji.vercel.app" , target:"_blank"},
+      { type: "github", label: "GitHub", href: "https://github.com/Sadhvikbaba/code-fudji" , target:"_blank"},
+      { type: "casestudy", label: "Case Study", href: "https://github.com/Sadhvikbaba/code-fudji" , target:"_blank"},
+      { type: "architecture", label: "Architecture", href: "https://github.com/Sadhvikbaba/code-fudji" , target:"_blank"},
     ],
     imageSrc: "/projects/code-fudji.png",
     imageAlt: "Code Fudji — Real-Time Collaboration Platform screenshot",
@@ -100,8 +101,8 @@ export const FEATURED_PROJECTS: Project[] = [
       { icon: "network", label: "SFU Architecture" },
       { icon: "video", label: "WebRTC Rooms" },
       { icon: "zap", label: "Sub-200ms Latency" },
-      { icon: "shield", label: "JWT Authentication" },
-      { icon: "layers", label: "Horizontal Scaling" },
+      { icon: "shield", label: "REDIS Pub/Sub" },
+      { icon: "layers", label: "TURN & STUN" },
       { icon: "monitor", label: "Stream Recording" },
     ],
     techStack: [
@@ -120,14 +121,14 @@ export const FEATURED_PROJECTS: Project[] = [
       { value: "99%", label: "Reliability" },
     ],
     buttons: [
-      { type: "demo", label: "Live Demo", href: "#" },
-      { type: "github", label: "GitHub", href: "#" },
-      { type: "casestudy", label: "Case Study", href: "#" },
-      { type: "architecture", label: "Architecture", href: "/projects/webrtc-sfu" },
+      { type: "demo", label: "Live Demo", href: "https://github.com/Sadhvikbaba/webrtc" , target:"_blank"},
+      { type: "github", label: "GitHub", href: "https://github.com/Sadhvikbaba/webrtc" , target:"_blank"},
+      { type: "casestudy", label: "Case Study", href: "https://github.com/Sadhvikbaba/webrtc" , target:"_blank"},
+      { type: "architecture", label: "Architecture", href: "https://github.com/Sadhvikbaba/webrtc" , target:"_blank"},
     ],
-    imageSrc: "/projects/webrtc-sfu.png",
+    imageSrc: "/projects/webrtc.png",
     imageAlt: "WebRTC SFU Platform — Scalable Real-Time Video Infrastructure screenshot",
-    glowColor: "168, 85, 247", // purple
+    glowColor: "168, 85, 247",
   },
 
   {
@@ -142,17 +143,20 @@ export const FEATURED_PROJECTS: Project[] = [
       { icon: "alert", label: "Anomaly Detection" },
       { icon: "dollar", label: "Auto Optimization" },
       { icon: "cloud", label: "Multi-Region AWS" },
-      { icon: "chart", label: "BI Dashboard" },
+      { icon: "chart", label: "Amazon LEX" },
       { icon: "bell", label: "Slack Alerts" },
     ],
     techStack: [
       "AWS",
-      "Python",
-      "TypeScript",
-      "Next.js",
-      "TensorFlow",
-      "PostgreSQL",
-      "Grafana",
+      "CloudWatch",
+      "Lambda",
+      "Cognito",
+      "EC2",
+      "S3",
+      "API Gateway",
+      "VPC",
+      "SNS",
+      "LEX"
     ],
     metrics: [
       { value: "30%", label: "Cost Savings" },
@@ -161,21 +165,20 @@ export const FEATURED_PROJECTS: Project[] = [
       { value: "99%", label: "Coverage" },
     ],
     buttons: [
-      { type: "demo", label: "Live Demo", href: "#" },
-      { type: "github", label: "GitHub", href: "#" },
-      { type: "casestudy", label: "Case Study", href: "#" },
-      { type: "architecture", label: "Architecture", href: "/projects/aws-finops" },
+      { type: "demo", label: "Live Demo", href: "https://github.com/Sadhvikbaba/aws-project" , target:"_blank"},
+      { type: "github", label: "GitHub", href: "https://github.com/Sadhvikbaba/aws-project" , target:"_blank"},
+      { type: "casestudy", label: "Case Study", href: "https://github.com/Sadhvikbaba/aws-project" , target:"_blank"},
+      { type: "architecture", label: "Architecture", href: "https://github.com/Sadhvikbaba/aws-project" , target:"_blank"},
     ],
-    imageSrc: "/projects/aws-finops.png",
+    imageSrc: "/projects/aws.png",
     imageAlt: "AWS FinOps Accelerator — AI-Powered Cost Governance screenshot",
     glowColor: "251, 146, 60", // amber
   },
-
   {
     id: "04",
     number: 4,
     title: "Twit",
-    category: "Twitter Clone Platform",
+    category: "Youtube & Twitter Clone Platform",
     description:
       "A full-featured social media platform featuring real-time feeds, trending topics, media uploads, and a sophisticated recommendation engine for personalised content delivery at scale.",
     engineeringHighlights: [
@@ -187,13 +190,11 @@ export const FEATURED_PROJECTS: Project[] = [
       { icon: "shield", label: "Auth & Rate Limiting" },
     ],
     techStack: [
-      "Next.js",
-      "TypeScript",
+      "React.js",
+      "JavaScript",
       "Node.js",
-      "PostgreSQL",
-      "Redis",
-      "S3",
-      "Elasticsearch",
+      "Mongo DB",
+      "Express.js",
     ],
     metrics: [
       { value: "10K+", label: "Users" },
@@ -202,10 +203,9 @@ export const FEATURED_PROJECTS: Project[] = [
       { value: "98%", label: "Availability" },
     ],
     buttons: [
-      { type: "demo", label: "Live Demo", href: "#" },
-      { type: "github", label: "GitHub", href: "#" },
-      { type: "casestudy", label: "Case Study", href: "#" },
-      { type: "architecture", label: "Architecture", href: "/projects/twit" },
+      { type: "demo", label: "Live Demo", href: "https://twit-frontend.vercel.app" , target:"_blank"},
+      { type: "github", label: "Frontend", href: "https://github.com/Sadhvikbaba/Twit-frontend" , target:"_blank"},
+      { type: "github", label: "Backend", href: "https://github.com/Sadhvikbaba/Twit-backend" , target:"_blank"},
     ],
     imageSrc: "/projects/twit.png",
     imageAlt: "Twit — Twitter Clone Platform screenshot",
@@ -228,13 +228,12 @@ export const FEATURED_PROJECTS: Project[] = [
       { icon: "clock", label: "Real-Time Evaluation" },
       { icon: "database", label: "Submission History" },
     ],
-
     techStack: [
-      "Next.js",
-      "TypeScript",
+      "React.js",
+      "JavaScript",
       "Node.js",
-      "PostgreSQL",
-      "Prisma",
+      "Mongo DB",
+      "Express.js",
       "Judge0 API",
       "Monaco Editor",
       "Tailwind CSS",
@@ -246,28 +245,10 @@ export const FEATURED_PROJECTS: Project[] = [
       { value: "OAuth", label: "Secure Login" },
       { value: "100%", label: "Responsive UI" },
     ],
-
     buttons: [
-      {
-        type: "demo",
-        label: "Live Demo",
-        href: "https://code-guru-frontend.vercel.app/",
-      },
-      {
-        type: "github",
-        label: "GitHub",
-        href: "#",
-      },
-      {
-        type: "casestudy",
-        label: "Case Study",
-        href: "#",
-      },
-      {
-        type: "architecture",
-        label: "Architecture",
-        href: "/projects/code-guru",
-      },
+      {type: "demo", label: "Live Demo", href: "https://code-guru-frontend.vercel.app/", target: "_blank", },
+      {type: "github", label: "Frontend", href: "https://github.com/Sadhvikbaba/codeGuru-Frontend", target: "_blank",},
+      {type: "github", label: "Backend", href: "https://github.com/Sadhvikbaba/codeGuru-Backend", target: "_blank", },
     ],
 
     imageSrc: "/projects/codeGuru.png",

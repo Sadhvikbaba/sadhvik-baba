@@ -23,20 +23,13 @@ export default function BrowserFrame({ src, alt }: BrowserFrameProps) {
       {/* Browser Content */}
       <div className="relative w-full flex-grow overflow-hidden bg-[var(--color-sky-bottom)]">
         <div className="absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/browser:scale-[1.03]">
-          {/* Using a placeholder div for now if the image doesn't exist, but wiring it up to Next/Image */}
-          {src.startsWith("/") ? (
-            <div className="w-full h-full bg-[var(--color-sky-main)] flex items-center justify-center text-[var(--color-hero-description)] font-mono text-sm">
-              <span className="opacity-50">[ Image: {src} ]</span>
-            </div>
-          ) : (
-             <Image
-               src={src}
-               alt={alt}
-               fill
-               className="object-cover object-top"
-               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
-             />
-          )}
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            className="object-cover object-top"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+          />
         </div>
         
         {/* Inner subtle shadow for depth */}

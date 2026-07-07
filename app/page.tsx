@@ -10,6 +10,8 @@ import ContactSection from "@/components/sections/contact/ContactSection";
 import ExperienceSection from "@/components/sections/experience/ExperienceSection";
 import CredentialsSection from "@/components/sections/certifications/CredentialsSection";
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   return (
     <main className="relative w-full min-h-screen bg-white dark:bg-slate-950 transition-colors duration-500 selection:bg-slate-800 dark:selection:bg-slate-700 selection:text-white">

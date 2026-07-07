@@ -8,7 +8,7 @@ export default function ProfileCard() {
       <div className="flex items-center gap-4 2xl:gap-5">
         <div className="relative w-24 h-24 rounded-full overflow-hidden shrink-0 shadow-sm border border-[var(--color-glass-border)] ring-2 ring-[var(--color-hero-accent)]/10 ring-offset-2 ring-offset-[var(--color-glass-bg)]">
           <Image
-            src="/me.jpg"
+            src="/me.png"
             alt="Sadhvik Baba"
             fill
             className="object-cover"
