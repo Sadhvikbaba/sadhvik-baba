@@ -4,6 +4,7 @@ import { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import Image from "next/image";
 import Cloud from "./Cloud";
+import Button from "../ui/Button";
 
 // Light Mode Clouds Config
 const LIGHT_CLOUDS_CONFIG = [
@@ -366,21 +367,15 @@ export default function ParallaxScene({ content, activeTheme }: ParallaxScenePro
             </p>
 
             {/* Get in Touch Pill Button */}
-            <a
+            <Button
               href="mailto:contact@sadhvik.com"
-              onClick={(e) => {
-                e.stopPropagation();
-              }}
-              style={{
-                boxShadow: "0 4px 14px 0 var(--hero-button-shadow)",
-              }}
-              className="inline-flex items-center gap-2 py-3 px-6 md:py-3.5 md:px-7 rounded-full text-xs md:text-sm font-semibold tracking-wide border border-hero-button-border bg-hero-button-bg text-hero-button-text hover:bg-hero-button-hover transition-all duration-300 pointer-events-auto select-none cursor-pointer"
+              onClick={(e: React.MouseEvent) => e.stopPropagation()}
             >
               <span>Get in touch</span>
               <svg className="w-3.5 h-3.5 md:w-4 md:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
-            </a>
+            </Button>
           </div>
         </motion.div>
 

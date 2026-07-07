@@ -10,9 +10,8 @@ import ContactForm from "./ContactForm";
 
 export default function ContactSection() {
   return (
-    <div className="relative w-full py-16 2xl:py-32 overflow-hidden">
+    <section id="contact" className="relative w-full py-16 2xl:py-32 bg-[var(--site-bg)] overflow-hidden transition-colors duration-500">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-[var(--color-sky-main)] -z-10 transition-colors duration-500" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[var(--color-hero-accent)]/5 rounded-full blur-[120px] pointer-events-none -z-10" />
 
       {/* Very subtle engineering grid */}
@@ -139,6 +138,6 @@ export default function ContactSection() {
 
         </div>
       </div>
-    </div>
+    </section>
   );
 }

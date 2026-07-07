@@ -1,7 +1,16 @@
 import { LEETCODE_ALL_STATS_QUERY } from "@/graphql/leetcodeQueries";
 import { ConsolidatedLeetCodeData, LeetCodeRawData } from "@/types/leetcode";
+import { redis } from "./redis";
 
 const LEETCODE_API_URL = "https://leetcode.com/graphql";
+
+// Two-tier caching: Local in-memory cache to reduce Redis reads
+interface LocalCacheEntry {
+  data: ConsolidatedLeetCodeData;
+  expiresAt: number;
+}
+const localCache = new Map<string, LocalCacheEntry>();
+const CACHE_TTL_MS = 6 * 60 * 60 * 1000; // 6 hours
 
 // Generate mock submission calendar for fallback display
 function generateFallbackCalendar(): Record<string, number> {
@@ -56,9 +65,37 @@ export const FALLBACK_LEETCODE_DATA: ConsolidatedLeetCodeData = {
 };
 
 export async function fetchLeetCodeData(username: string): Promise<ConsolidatedLeetCodeData> {
+  const cacheKey = `leetcode:v1:${username}`;
+
+  // 0. Check Local Memory Cache
+  const localCacheEntry = localCache.get(cacheKey);
+  if (localCacheEntry && localCacheEntry.expiresAt > Date.now()) {
+    console.log(`[LeetCode] Local Memory Cache HIT for ${cacheKey}`);
+    return localCacheEntry.data;
+  }
+
+  // 1. Check Redis Cache
   try {
+    const cached = await redis.get<ConsolidatedLeetCodeData>(cacheKey);
+    if (cached) {
+      console.log(`[LeetCode] Redis Cache HIT for ${cacheKey}`);
+      // Populate local cache to prevent future Redis reads for this lambda instance
+      localCache.set(cacheKey, { data: cached, expiresAt: Date.now() + CACHE_TTL_MS });
+      return cached;
+    }
+    console.log(`[LeetCode] Redis Cache MISS for ${cacheKey}`);
+  } catch (redisError) {
+    console.error(`[LeetCode] Redis GET error, continuing to GraphQL:`, redisError);
+  }
+
+  // 2. Fetch from GraphQL with Timeout
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
+
     const response = await fetch(LEETCODE_API_URL, {
       method: "POST",
+      signal: controller.signal,
       headers: {
         "Content-Type": "application/json",
         "Referer": "https://leetcode.com",
@@ -159,7 +196,7 @@ export async function fetchLeetCodeData(username: string): Promise<ConsolidatedL
       });
     }
 
-    return {
+    const finalData: ConsolidatedLeetCodeData = {
       username: raw.matchedUser.username,
       realName: profile?.realName || raw.matchedUser.username,
       avatar: profile?.userAvatar || "https://assets.leetcode.com/users/default_avatar.png",
@@ -182,6 +219,21 @@ export async function fetchLeetCodeData(username: string): Promise<ConsolidatedL
       badges: raw.matchedUser.badges || [],
       contestHistory: contestHistory.slice(-6) // Display recent 6 contests
     };
+
+    clearTimeout(timeoutId);
+
+    // 3. Cache the processed valid data
+    try {
+      await redis.set(cacheKey, finalData, { ex: 43200 }); // 12 hours
+      console.log(`[LeetCode] Redis Cache SET for ${cacheKey}`);
+    } catch (redisError) {
+      console.error(`[LeetCode] Redis SET error:`, redisError);
+    }
+
+    // Also populate local memory cache
+    localCache.set(cacheKey, { data: finalData, expiresAt: Date.now() + CACHE_TTL_MS });
+
+    return finalData;
   } catch (error) {
     console.error("Failed to fetch LeetCode data from GraphQL API, using mock fallbacks:", error);
     // Return mock fallback data in case of error

@@ -8,6 +8,7 @@ import PageNavigation from "@/components/navigation/PageNavigation";
 import Footer from "@/components/footer/Footer";
 import ContactSection from "@/components/sections/contact/ContactSection";
 import ExperienceSection from "@/components/sections/experience/ExperienceSection";
+import CredentialsSection from "@/components/sections/certifications/CredentialsSection";
 
 export default function Home() {
   return (
@@ -39,9 +40,8 @@ export default function Home() {
       {/* 6. Engineering in Practice (Experience Timeline) */}
       <ExperienceSection />
 
-      <section id="certifications" className="w-full min-h-[50vh] flex items-center justify-center bg-white dark:bg-slate-950 border-b border-[#E6E1D3]/50 dark:border-slate-900/40 opacity-50">
-        <h2 className="text-2xl font-bold font-mono">Certifications & Achievements (Coming Soon)</h2>
-      </section>
+      {/* 7. Credentials That Matter (Certifications) */}
+      <CredentialsSection />
 
       {/* 6. Contact Section (Final CTA) */}
       <section id="contact">

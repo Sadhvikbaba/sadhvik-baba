@@ -119,6 +119,9 @@
   --color-glass-bg: var(--glass-card-bg);
   --color-glass-border: var(--glass-card-border);
   
+  --color-site-bg: var(--site-bg);
+  --color-site-text: var(--site-text);
+  
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }

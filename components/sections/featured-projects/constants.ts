@@ -79,7 +79,7 @@ export const FEATURED_PROJECTS: Project[] = [
       { value: "99.9%", label: "Uptime" },
     ],
     buttons: [
-      { type: "demo", label: "Live Demo", href: "#" },
+      { type: "demo", label: "Live Demo", href: "https://code-fudji.vercel.app" },
       { type: "github", label: "GitHub", href: "#" },
       { type: "casestudy", label: "Case Study", href: "#" },
       { type: "architecture", label: "Architecture", href: "/projects/code-fudji" },
@@ -210,5 +210,69 @@ export const FEATURED_PROJECTS: Project[] = [
     imageSrc: "/projects/twit.png",
     imageAlt: "Twit — Twitter Clone Platform screenshot",
     glowColor: "31, 163, 116", // teal-green
+  },
+
+  {
+    id: "05",
+    number: 5,
+    title: "Code Guru",
+    category: "Online Coding Platform",
+    description:
+      "A modern online coding platform featuring Judge0-powered code execution, OAuth 2.0 authentication, multi-language support, and an interactive coding environment designed for technical interview preparation and programming practice.",
+
+    engineeringHighlights: [
+      { icon: "code", label: "Judge0 Code Execution" },
+      { icon: "terminal", label: "Multi-Language Compiler" },
+      { icon: "shield", label: "OAuth 2.0 Authentication" },
+      { icon: "editor", label: "Monaco Code Editor" },
+      { icon: "clock", label: "Real-Time Evaluation" },
+      { icon: "database", label: "Submission History" },
+    ],
+
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Prisma",
+      "Judge0 API",
+      "Monaco Editor",
+      "Tailwind CSS",
+    ],
+
+    metrics: [
+      { value: "5+", label: "Languages Supported" },
+      { value: "<2s", label: "Average Execution" },
+      { value: "OAuth", label: "Secure Login" },
+      { value: "100%", label: "Responsive UI" },
+    ],
+
+    buttons: [
+      {
+        type: "demo",
+        label: "Live Demo",
+        href: "https://code-guru-frontend.vercel.app/",
+      },
+      {
+        type: "github",
+        label: "GitHub",
+        href: "#",
+      },
+      {
+        type: "casestudy",
+        label: "Case Study",
+        href: "#",
+      },
+      {
+        type: "architecture",
+        label: "Architecture",
+        href: "/projects/code-guru",
+      },
+    ],
+
+    imageSrc: "/projects/codeGuru.png",
+    imageAlt: "Code Guru — Online Coding Platform screenshot",
+
+    glowColor: "245, 158, 11", // amber
   },
 ];

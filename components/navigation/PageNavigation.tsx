@@ -74,7 +74,7 @@ export default function PageNavigation() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
-          className="hidden md:flex fixed left-6 lg:left-10 top-1/2 -translate-y-1/2 z-50 py-6 px-2 rounded-[2rem] bg-[var(--color-glass-bg)] backdrop-blur-xl border border-[var(--color-glass-border)] shadow-[0_8px_32px_rgba(0,0,0,0.05)] group transition-all duration-500 hover:shadow-[0_16px_48px_rgba(0,0,0,0.1)] flex-col gap-1"
+          className="hidden md:flex fixed left-3 lg:left-6 top-1/2 -translate-y-1/2 z-50 py-4 px-1.5 rounded-[2rem] bg-[var(--color-glass-bg)] backdrop-blur-xl border border-[var(--color-glass-border)] shadow-[0_8px_32px_rgba(0,0,0,0.05)] group transition-all duration-500 hover:shadow-[0_16px_48px_rgba(0,0,0,0.1)] flex-col gap-1"
         >
           {NAV_ITEMS.map((item) => {
             const isActive = activeSection === item.href.replace('#', '');
@@ -82,7 +82,7 @@ export default function PageNavigation() {
               <div 
                 key={item.id} 
                 onClick={() => scrollToSection(item.href)}
-                className="relative flex items-center gap-4 cursor-pointer px-4 py-3 rounded-full transition-colors duration-300"
+                className="relative flex items-center gap-3 cursor-pointer px-3 py-2.5 rounded-full transition-colors duration-300"
               >
                 {/* Subtle active background */}
                 {isActive && (
@@ -94,7 +94,7 @@ export default function PageNavigation() {
                 )}
                 
                 {/* Number */}
-                <span className={`relative z-10 font-mono text-sm font-bold transition-colors duration-300 ${isActive ? 'text-[var(--color-hero-accent)]' : 'text-[var(--color-hero-subtitle)]'}`}>
+                <span className={`relative z-10 font-mono text-sm font-bold w-5 text-center transition-colors duration-300 ${isActive ? 'text-[var(--color-hero-accent)]' : 'text-[var(--color-hero-subtitle)]'}`}>
                   {item.id}
                 </span>
                 
