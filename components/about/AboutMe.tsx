@@ -202,7 +202,14 @@ export default function AboutMe() {
             
             {/* View My Work Button */}
             <a
-              href="#works"
+              href="#projects"
+              onClick={(e) => {
+                e.preventDefault();
+                const el = document.querySelector("#projects");
+                if (el) {
+                  el.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
               className={`inline-flex items-center gap-2.5 py-4 px-8 rounded-2xl text-sm md:text-base font-bold tracking-wide transition-all duration-300 hover:scale-[1.03] active:scale-95 cursor-pointer shadow-lg shrink-0 bg-[var(--color-hero-button-bg)] text-[var(--color-hero-button-text)] hover:bg-[var(--color-hero-button-hover)] shadow-[0_4px_16px_var(--color-hero-button-shadow)] border border-[var(--color-hero-button-border)] hover:border-[var(--color-hero-accent)]/30`}
             >
               <span>View My Work</span>

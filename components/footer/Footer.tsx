@@ -407,7 +407,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="mailto:contact@sadhvik.com"
+              href="mailto:psadhvik2006@gmail.com"
               className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-transparent text-[var(--hero-heading-gradient-mid)] dark:text-[var(--footer-text)] border border-[var(--footer-title)]/15 dark:border-[var(--footer-text)]/30 hover:text-[var(--footer-accent)] hover:border-[var(--footer-accent)] hover:bg-[var(--footer-accent)]/5 transition-all duration-300 group"
             >
               <FaEnvelope className="text-sm shrink-0" />
@@ -460,7 +460,7 @@ export default function Footer() {
               <span className="text-[var(--footer-accent)] font-bold">•</span>
               <span className="text-[var(--footer-title)] dark:text-[var(--footer-text)] font-semibold opacity-95">Redis</span>
               <span className="text-[var(--footer-accent)] font-bold">•</span>
-              <span className="text-[var(--footer-title)] dark:text-[var(--footer-text)] font-semibold opacity-95">AWS</span>
+              <span className="text-[var(--footer-title)] dark:text-[var(--footer-text)] font-semibold opacity-95">Vercel</span>
             </div>
           </div>
 
