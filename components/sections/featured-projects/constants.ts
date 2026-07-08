@@ -80,10 +80,10 @@ export const FEATURED_PROJECTS: Project[] = [
       { value: "99.9%", label: "Uptime" },
     ],
     buttons: [
-      { type: "demo", label: "Live Demo", href: "https://code-fudji.vercel.app" , target:"_blank"},
-      { type: "github", label: "GitHub", href: "https://github.com/Sadhvikbaba/code-fudji" , target:"_blank"},
-      { type: "casestudy", label: "Case Study", href: "https://github.com/Sadhvikbaba/code-fudji" , target:"_blank"},
-      { type: "architecture", label: "Architecture", href: "https://github.com/Sadhvikbaba/code-fudji" , target:"_blank"},
+      { type: "demo", label: "Live Demo", href: "https://code-fudji.vercel.app", target: "_blank" },
+      { type: "github", label: "GitHub", href: "https://github.com/Sadhvikbaba/code-fudji", target: "_blank" },
+      { type: "casestudy", label: "Case Study", href: "https://github.com/Sadhvikbaba/code-fudji", target: "_blank" },
+      { type: "architecture", label: "Architecture", href: "https://github.com/Sadhvikbaba/code-fudji", target: "_blank" },
     ],
     imageSrc: "/projects/code-fudji.png",
     imageAlt: "Code Fudji — Real-Time Collaboration Platform screenshot",
@@ -121,10 +121,10 @@ export const FEATURED_PROJECTS: Project[] = [
       { value: "99%", label: "Reliability" },
     ],
     buttons: [
-      { type: "demo", label: "Live Demo", href: "https://github.com/Sadhvikbaba/webrtc" , target:"_blank"},
-      { type: "github", label: "GitHub", href: "https://github.com/Sadhvikbaba/webrtc" , target:"_blank"},
-      { type: "casestudy", label: "Case Study", href: "https://github.com/Sadhvikbaba/webrtc" , target:"_blank"},
-      { type: "architecture", label: "Architecture", href: "https://github.com/Sadhvikbaba/webrtc" , target:"_blank"},
+      { type: "demo", label: "Live Demo", href: "https://github.com/Sadhvikbaba/webrtc", target: "_blank" },
+      { type: "github", label: "GitHub", href: "https://github.com/Sadhvikbaba/webrtc", target: "_blank" },
+      { type: "casestudy", label: "Case Study", href: "https://github.com/Sadhvikbaba/webrtc", target: "_blank" },
+      { type: "architecture", label: "Architecture", href: "https://github.com/Sadhvikbaba/webrtc", target: "_blank" },
     ],
     imageSrc: "/projects/webrtc.png",
     imageAlt: "WebRTC SFU Platform — Scalable Real-Time Video Infrastructure screenshot",
@@ -165,10 +165,10 @@ export const FEATURED_PROJECTS: Project[] = [
       { value: "99%", label: "Coverage" },
     ],
     buttons: [
-      { type: "demo", label: "Live Demo", href: "https://github.com/Sadhvikbaba/aws-project" , target:"_blank"},
-      { type: "github", label: "GitHub", href: "https://github.com/Sadhvikbaba/aws-project" , target:"_blank"},
-      { type: "casestudy", label: "Case Study", href: "https://github.com/Sadhvikbaba/aws-project" , target:"_blank"},
-      { type: "architecture", label: "Architecture", href: "https://github.com/Sadhvikbaba/aws-project" , target:"_blank"},
+      { type: "demo", label: "Live Demo", href: "https://github.com/Sadhvikbaba/aws-project", target: "_blank" },
+      { type: "github", label: "GitHub", href: "https://github.com/Sadhvikbaba/aws-project", target: "_blank" },
+      { type: "casestudy", label: "Case Study", href: "https://github.com/Sadhvikbaba/aws-project", target: "_blank" },
+      { type: "architecture", label: "Architecture", href: "https://github.com/Sadhvikbaba/aws-project", target: "_blank" },
     ],
     imageSrc: "/projects/aws.png",
     imageAlt: "AWS FinOps Accelerator — AI-Powered Cost Governance screenshot",
@@ -203,9 +203,9 @@ export const FEATURED_PROJECTS: Project[] = [
       { value: "98%", label: "Availability" },
     ],
     buttons: [
-      { type: "demo", label: "Live Demo", href: "https://twit-frontend.vercel.app" , target:"_blank"},
-      { type: "github", label: "Frontend", href: "https://github.com/Sadhvikbaba/Twit-frontend" , target:"_blank"},
-      { type: "github", label: "Backend", href: "https://github.com/Sadhvikbaba/Twit-backend" , target:"_blank"},
+      { type: "demo", label: "Live Demo", href: "https://twit-frontend.vercel.app", target: "_blank" },
+      { type: "github", label: "Frontend", href: "https://github.com/Sadhvikbaba/Twit-frontend", target: "_blank" },
+      { type: "github", label: "Backend", href: "https://github.com/Sadhvikbaba/Twit-backend", target: "_blank" },
     ],
     imageSrc: "/projects/twit.png",
     imageAlt: "Twit — Twitter Clone Platform screenshot",
@@ -246,14 +246,62 @@ export const FEATURED_PROJECTS: Project[] = [
       { value: "100%", label: "Responsive UI" },
     ],
     buttons: [
-      {type: "demo", label: "Live Demo", href: "https://code-guru-frontend.vercel.app/", target: "_blank", },
-      {type: "github", label: "Frontend", href: "https://github.com/Sadhvikbaba/codeGuru-Frontend", target: "_blank",},
-      {type: "github", label: "Backend", href: "https://github.com/Sadhvikbaba/codeGuru-Backend", target: "_blank", },
+      { type: "demo", label: "Live Demo", href: "https://code-guru-frontend.vercel.app/", target: "_blank", },
+      { type: "github", label: "Frontend", href: "https://github.com/Sadhvikbaba/codeGuru-Frontend", target: "_blank", },
+      { type: "github", label: "Backend", href: "https://github.com/Sadhvikbaba/codeGuru-Backend", target: "_blank", },
     ],
 
     imageSrc: "/projects/codeGuru.png",
     imageAlt: "Code Guru — Online Coding Platform screenshot",
 
     glowColor: "245, 158, 11", // amber
+  },
+
+  {
+    id: "06",
+    number: 6,
+    title: "Go TODO",
+    category: "High-Performance Task Management API",
+
+    description:
+      "A high-performance RESTful task management application built to explore Go's concurrency model and backend architecture. Developed using Go Fiber with Redis caching and MongoDB persistence, focusing on fast API responses, clean architecture, and scalable backend design.",
+
+    engineeringHighlights: [
+      { icon: "bolt", label: "Go Fiber Framework" },
+      { icon: "database", label: "Redis Caching" },
+      { icon: "server", label: "RESTful API Design" },
+      { icon: "layers", label: "Clean Architecture" },
+      { icon: "check", label: "Task CRUD Operations" },
+      { icon: "speed", label: "High Performance Backend" },
+    ],
+
+    techStack: [
+      "Go",
+      "Fiber",
+      "Redis",
+      "MongoDB",
+      "REST API",
+      "JWT",
+      "Docker",
+      "Postman",
+    ],
+
+    metrics: [
+      { value: "<10ms", label: "Cached Response" },
+      { value: "REST", label: "API Architecture" },
+      { value: "Redis", label: "Caching Layer" },
+      { value: "Go", label: "Backend Engine" },
+    ],
+
+    buttons: [
+      { type: "demo", label: "Demo", href: "https://todo-frontend-beta-three.vercel.app", target: "_blank", },
+      { type: "github", label: "Frontend", href: "https://github.com/Sadhvikbaba/todo-frontend", target: "_blank", },
+      { type: "github", label: "Backend", href: "https://github.com/Sadhvikbaba/todo-go", target: "_blank", },
+    ],
+
+    imageSrc: "/projects/todo.png",
+    imageAlt: "Go TODO — High-Performance Task Management API",
+
+    glowColor: "59, 130, 246", // Go-inspired blue
   },
 ];

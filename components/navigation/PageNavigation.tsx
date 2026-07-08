@@ -11,7 +11,8 @@ export const NAV_ITEMS = [
   { id: "05", title: "PROJECTS", href: "#projects" },
   { id: "06", title: "EXPERIENCE", href: "#experience" },
   { id: "07", title: "CERTIFICATIONS", href: "#certifications" },
-  { id: "08", title: "CONTACT", href: "#contact" },
+  { id: "08", title: "ACHIEVEMENTS", href: "#achievements" },
+  { id: "09", title: "CONTACT", href: "#contact" },
 ];
 
 export default function PageNavigation() {
@@ -82,7 +83,7 @@ export default function PageNavigation() {
               <div 
                 key={item.id} 
                 onClick={() => scrollToSection(item.href)}
-                className="relative flex items-center gap-3 cursor-pointer px-3 py-2.5 rounded-full transition-colors duration-300"
+                className="relative flex items-center cursor-pointer px-3 py-2.5 rounded-full transition-colors duration-300"
               >
                 {/* Subtle active background */}
                 {isActive && (
@@ -99,7 +100,7 @@ export default function PageNavigation() {
                 </span>
                 
                 {/* Line and Title (Revealed on Group Hover) */}
-                <div className="flex items-center gap-4 overflow-hidden max-w-0 opacity-0 group-hover:max-w-[200px] group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                <div className="flex items-center gap-4 overflow-hidden max-w-0 opacity-0 group-hover:max-w-[200px] group-hover:opacity-100 group-hover:ml-3 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
                   <div className={`h-[1px] w-6 shrink-0 transition-colors duration-300 ${isActive ? 'bg-[var(--color-hero-accent)]' : 'bg-[var(--color-glass-border)]'}`} />
                   <span className={`text-xs font-bold uppercase tracking-[0.15em] whitespace-nowrap transition-colors duration-300 ${isActive ? 'text-[var(--color-hero-heading)]' : 'text-[var(--color-hero-subtitle)]'}`}>
                     {item.title}

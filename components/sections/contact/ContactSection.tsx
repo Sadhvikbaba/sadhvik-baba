@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeUpVariant, slideLeftVariant, slideRightVariant, staggerContainerVariant } from "./motion";
 import { SOCIAL_LINKS, INFO_ITEMS } from "./constants";
@@ -19,40 +20,78 @@ export default function ContactSection() {
 
       <div className="w-full px-6 md:px-16 lg:px-24">
         {/* Header Section */}
-        <div className="mb-6 2xl:mb-16">
-          <motion.div
+        <div className="mb-8 2xl:mb-16 flex flex-col lg:flex-row lg:items-end justify-between gap-8 lg:gap-16 w-full">
+          {/* Left Column: Heading and Subtitle */}
+          <div className="flex flex-col items-start text-left max-w-2xl">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeUpVariant}
+              className="text-[10px] uppercase tracking-[0.3em] font-extrabold mb-3 text-[var(--color-hero-accent)] flex items-center gap-2"
+            >
+              Contact
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-hero-accent)]" />
+              <span className="w-6 h-[1px] bg-[var(--color-hero-accent)]/50" />
+            </motion.div>
+
+            <motion.h2
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeUpVariant}
+              className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--color-hero-heading)] mb-5 leading-[1.1] font-sans"
+            >
+              Let's Build Something <span className="font-serif italic font-medium text-[var(--color-hero-accent)] relative inline-block">
+                Great
+                <span className="absolute -top-2 -right-6 text-2xl animate-[pulse-star_3s_ease-in-out_infinite]">✦</span>
+              </span>
+            </motion.h2>
+
+            <motion.p
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeUpVariant}
+              className="text-sm sm:text-base md:text-lg leading-relaxed text-[var(--color-hero-description)] transition-colors duration-500 font-sans max-w-xl text-left"
+            >
+              Whether it's an internship, a full-time opportunity, an ambitious project, or simply a conversation about technology—<span className="font-semibold text-[var(--color-hero-accent)]">I'd love to hear from you.</span>
+            </motion.p>
+            
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeUpVariant}
+              className="w-16 h-1.5 rounded-full mt-6 bg-[var(--color-hero-accent)]"
+            />
+          </div>
+
+          {/* Right Column: Illustration Images */}
+          <motion.div 
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeUpVariant}
-            className="flex items-center gap-3 mb-4 text-[var(--color-hero-accent)] font-mono text-xs uppercase tracking-widest font-semibold"
+            className="relative w-full max-w-[400px] md:max-w-[600px] lg:max-w-[800px] lg:w-[50%] aspect-[16/9] md:aspect-[16/9] mx-auto md:mx-0 pointer-events-none flex-shrink-0"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-hero-accent)] shadow-[0_0_8px_var(--color-hero-accent)]" />
-            GET IN TOUCH
+            <Image 
+              src="/contact/light.png"
+              alt="Contact Illustration"
+              fill
+              className="object-contain object-bottom lg:object-right-bottom dark:hidden"
+              sizes="(max-width: 768px) 400px, (max-width: 1200px) 600px, 800px"
+              priority
+            />
+            <Image 
+              src="/contact/dark.png"
+              alt="Contact Illustration"
+              fill
+              className="object-contain object-bottom lg:object-right-bottom hidden dark:block"
+              sizes="(max-width: 768px) 400px, (max-width: 1200px) 600px, 800px"
+              priority
+            />
           </motion.div>
-
-          <motion.h2
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUpVariant}
-            className="text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-extrabold text-[var(--color-hero-heading)] mb-3 2xl:mb-6 tracking-tight"
-          >
-            Let's Build Something <span className="text-[var(--color-hero-accent)] relative inline-block">
-              Great
-              <span className="absolute -top-2 -right-6 text-2xl animate-[pulse-star_3s_ease-in-out_infinite]">✦</span>
-            </span>
-          </motion.h2>
-
-          <motion.p
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUpVariant}
-            className="text-base md:text-lg text-[var(--color-hero-description)] max-w-2xl leading-relaxed"
-          >
-            Whether it's an internship, a full-time opportunity, an ambitious project, or simply a conversation about technology—<span className="font-semibold text-[var(--color-hero-accent)]">I'd love to hear from you.</span>
-          </motion.p>
         </div>
 
         {/* Split Layout */}

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { toolboxCategories } from "@/lib/toolbox";
 import ToolboxCard from "@/components/cards/ToolboxCard";
@@ -52,8 +53,9 @@ export default function EngineeringToolbox() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={motionConfig.staggerContainer}
-          className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 lg:gap-12 w-full"
+          className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 lg:gap-16 w-full"
         >
+          {/* Left Column: Heading and Subtitle */}
           <div className="flex flex-col items-start text-left max-w-2xl">
             {/* Small Label */}
             <span className="text-[10px] uppercase tracking-[0.3em] font-extrabold mb-3 text-[var(--color-hero-accent)] flex items-center gap-2">
@@ -63,21 +65,39 @@ export default function EngineeringToolbox() {
             </span>
 
             {/* Main Heading */}
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--color-hero-heading)] leading-[1.1] transition-colors duration-500 font-sans">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--color-hero-heading)] leading-[1.1] transition-colors duration-500 font-sans mb-5">
               The Engineering{" "}
               <span className="font-serif italic font-medium text-[var(--color-hero-accent)]">
                 Toolbox
               </span>
             </h2>
-            <div className="w-16 h-1.5 rounded-full mt-5 bg-[var(--color-hero-accent)]" />
-          </div>
 
-          {/* Subtitle (aligned to bottom/right on desktop) */}
-          <div className="max-w-xl">
-            <p className="text-sm sm:text-base md:text-lg leading-relaxed text-[var(--color-hero-description)] transition-colors duration-500 font-sans lg:mb-1">
+            {/* Subtitle (moved under heading) */}
+            <p className="text-sm sm:text-base md:text-lg leading-relaxed text-[var(--color-hero-description)] transition-colors duration-500 font-sans max-w-xl">
               Every technology serves a purpose. From crafting seamless interfaces to designing
               scalable backend systems, these are the tools I use to build reliable, production-ready software.
             </p>
+            <div className="w-16 h-1.5 rounded-full mt-6 bg-[var(--color-hero-accent)]" />
+          </div>
+
+          {/* Right Column: Illustration Images */}
+          <div className="relative w-full max-w-[400px] md:max-w-[450px] lg:max-w-[500px] lg:w-[40%] aspect-[16/9] md:aspect-[400/180] mx-auto md:mx-0 pointer-events-none flex-shrink-0">
+            <Image 
+              src="/techstack/light.png"
+              alt="Technology Illustration"
+              fill
+              className="object-contain object-center lg:object-right-bottom dark:hidden"
+              sizes="(max-width: 768px) 300px, (max-width: 1200px) 450px, 500px"
+              priority
+            />
+            <Image 
+              src="/techstack/dark.png"
+              alt="Technology Illustration"
+              fill
+              className="object-contain object-center lg:object-right-bottom hidden dark:block"
+              sizes="(max-width: 768px) 300px, (max-width: 1200px) 450px, 500px"
+              priority
+            />
           </div>
         </motion.div>
 

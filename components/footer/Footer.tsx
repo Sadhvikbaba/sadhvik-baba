@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
+import { FaGithub, FaLinkedin, FaFileAlt, FaEnvelope, FaHeart } from "react-icons/fa";
+import { FiArrowUpRight, FiArrowUp } from "react-icons/fi";
 
 export default function Footer() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -324,141 +326,155 @@ export default function Footer() {
       </div>
 
       {/* 3. CORE CONTENT POCKET */}
-      <div className="relative z-20 max-w-4xl mx-auto w-full px-6 flex flex-col items-center justify-center text-center my-auto pt-8">
+      <div className="relative z-20 max-w-6xl mx-auto w-full px-6 py-12 md:py-16 flex flex-col md:flex-row justify-between items-center md:items-stretch gap-12 md:gap-8 my-auto">
         
-        {/* Animated Headline */}
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="font-serif text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-[#E2E8F0] transition-colors duration-500 mb-6 leading-tight select-none"
-        >
-          Let's Build Something Great
-        </motion.h2>
-
-        {/* Subtitle / CTA text */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="text-sm sm:text-base text-slate-600 dark:text-[#90A7C7] font-sans max-w-xl mx-auto leading-relaxed mb-10 transition-colors duration-500"
-        >
-          Whether you have a project in mind, an opportunity, or simply want to connect, I'd love to hear from you.
-        </motion.p>
-
-        {/* Premium Social Icons */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex items-center gap-5"
-        >
-          {/* GitHub */}
-          <a
-            href="https://github.com/sadhvikbaba"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-12 h-12 rounded-full border border-slate-800 text-slate-300 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-white/10 hover:backdrop-blur-md hover:border-slate-500 hover:shadow-[0_0_15px_rgba(144,167,199,0.15)] group cursor-pointer"
-            aria-label="GitHub Profile"
-          >
-            <svg
-              className="w-5 h-5 transition-transform duration-300 group-hover:scale-105"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
+        {/* Left Column */}
+        <div className="flex flex-row items-stretch gap-4 w-full md:w-[22%] justify-center md:justify-start md:self-start md:pt-6 text-left">
+          <div className="flex items-start pt-1.5 shrink-0">
+            <svg className="w-5 h-5 text-[var(--footer-accent)]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5Z" />
             </svg>
-          </a>
+          </div>
+          <div className="w-[1.5px] bg-[var(--footer-accent)]/30 shrink-0" />
+          <div className="flex flex-col justify-center">
+            <p className="text-[10px] uppercase tracking-[0.2em] font-extrabold text-[var(--footer-accent)] mb-1 select-none">
+              Thanks for stopping by!
+            </p>
+            <p className="text-xs sm:text-sm font-medium leading-relaxed text-[var(--footer-title)] opacity-90">
+              Let's keep building<br className="hidden md:inline" /> the future together.
+            </p>
+          </div>
+        </div>
 
-          {/* LinkedIn */}
-          <a
-            href="https://linkedin.com/in/sadhvikbaba"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-12 h-12 rounded-full border border-slate-800 text-slate-300 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-white/10 hover:backdrop-blur-md hover:border-slate-500 hover:shadow-[0_0_15px_rgba(144,167,199,0.15)] group cursor-pointer"
-            aria-label="LinkedIn Profile"
-          >
-            <svg
-              className="w-4 h-4 transition-transform duration-300 group-hover:scale-105"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-            </svg>
-          </a>
+        {/* Middle Column */}
+        <div className="flex flex-col items-center justify-center text-center w-full md:w-[56%] select-none md:self-center">
+          {/* Monogram Logo */}
+          <div className="mb-4 relative">
+            <div className="relative font-serif text-3xl font-semibold text-[var(--footer-title)] leading-none h-12 w-12 flex items-center justify-center select-none">
+              <span className="absolute -translate-y-1.5 -translate-x-1.5">S</span>
+              <span className="absolute translate-y-1.5 translate-x-1.5">B</span>
+              <div className="absolute top-0 right-[-8px]">
+                <svg className="w-2.5 h-2.5 text-[var(--footer-accent)] animate-pulse" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5Z" />
+                </svg>
+              </div>
+            </div>
+          </div>
 
-          {/* Mail */}
-          <a
-            href="mailto:contact@sadhvik.com"
-            className="w-12 h-12 rounded-full border border-slate-800 text-slate-300 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-white/10 hover:backdrop-blur-md hover:border-slate-500 hover:shadow-[0_0_15px_rgba(144,167,199,0.15)] group cursor-pointer"
-            aria-label="Email Contact"
-          >
-            <svg
-              className="w-4 h-4 transition-transform duration-300 group-hover:scale-105"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-          </a>
+          <h2 className="font-serif text-4xl sm:text-5xl md:text-5.5xl font-medium tracking-tight text-[var(--footer-title)] leading-none mb-3 animate-fade-in">
+            Sadhvik Baba
+          </h2>
+          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-[var(--footer-accent)] mb-4 block leading-none">
+            Software Engineer
+          </span>
+          <p className="text-xs sm:text-sm text-[var(--footer-text)] opacity-90 font-sans max-w-sm mx-auto leading-relaxed mb-8">
+            Building scalable digital experiences<br className="hidden md:inline" /> from ideas to production.
+          </p>
 
-          {/* Twitter / X */}
-          <a
-            href="https://x.com/sadhvikbaba"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-12 h-12 rounded-full border border-slate-800 text-slate-300 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-white/10 hover:backdrop-blur-md hover:border-slate-500 hover:shadow-[0_0_15px_rgba(144,167,199,0.15)] group cursor-pointer"
-            aria-label="Twitter / X Profile"
-          >
-            <svg
-              className="w-4 h-4 transition-transform duration-300 group-hover:scale-105"
-              fill="currentColor"
-              viewBox="0 0 24 24"
+          {/* Social Row of Buttons */}
+          <div className="flex flex-wrap md:flex-nowrap items-center justify-center gap-3 w-full">
+            <a
+              href="https://github.com/Sadhvikbaba"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-transparent text-[var(--hero-heading-gradient-mid)] dark:text-[var(--footer-text)] border border-[var(--footer-title)]/15 dark:border-[var(--footer-text)]/30 hover:text-[var(--footer-accent)] hover:border-[var(--footer-accent)] hover:bg-[var(--footer-accent)]/5 transition-all duration-300 group"
             >
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-          </a>
-        </motion.div>
+              <FaGithub className="text-sm shrink-0" />
+              <span>GitHub</span>
+              <FiArrowUpRight className="text-xs opacity-70 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+            </a>
+            
+            <a
+              href="https://www.linkedin.com/in/sadhvik-baba-patibandla-563964278"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-transparent text-[var(--hero-heading-gradient-mid)] dark:text-[var(--footer-text)] border border-[var(--footer-title)]/15 dark:border-[var(--footer-text)]/30 hover:text-[var(--footer-accent)] hover:border-[var(--footer-accent)] hover:bg-[var(--footer-accent)]/5 transition-all duration-300 group"
+            >
+              <FaLinkedin className="text-sm shrink-0" />
+              <span>LinkedIn</span>
+              <FiArrowUpRight className="text-xs opacity-70 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+            </a>
+
+            <a
+              href="https://drive.google.com/file/d/1aQM8IO26xb8tdmBR3IWiuUeY4fIat9XA/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-transparent text-[var(--hero-heading-gradient-mid)] dark:text-[var(--footer-text)] border border-[var(--footer-title)]/15 dark:border-[var(--footer-text)]/30 hover:text-[var(--footer-accent)] hover:border-[var(--footer-accent)] hover:bg-[var(--footer-accent)]/5 transition-all duration-300 group"
+            >
+              <FaFileAlt className="text-sm shrink-0" />
+              <span>Resume</span>
+              <FiArrowUpRight className="text-xs opacity-70 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+            </a>
+
+            <a
+              href="mailto:contact@sadhvik.com"
+              className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-transparent text-[var(--hero-heading-gradient-mid)] dark:text-[var(--footer-text)] border border-[var(--footer-title)]/15 dark:border-[var(--footer-text)]/30 hover:text-[var(--footer-accent)] hover:border-[var(--footer-accent)] hover:bg-[var(--footer-accent)]/5 transition-all duration-300 group"
+            >
+              <FaEnvelope className="text-sm shrink-0" />
+              <span>Email</span>
+              <FiArrowUpRight className="text-xs opacity-70 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+            </a>
+          </div>
+        </div>
+
+        {/* Right Column */}
+        <div className="flex flex-col items-center md:items-start gap-1 w-full md:w-[22%] text-center md:text-left md:self-end md:pb-6">
+          <span className="font-serif text-5xl font-extrabold text-[var(--footer-accent)] opacity-60 leading-none select-none">
+            “
+          </span>
+          <div className="flex flex-row items-stretch gap-4 justify-center md:justify-start">
+            <div className="w-[1.5px] bg-[var(--footer-accent)]/30 shrink-0" />
+            <div className="text-left flex flex-col justify-center">
+              <p className="text-xs sm:text-sm font-medium leading-relaxed text-[var(--hero-subtitle)] opacity-90">
+                Curious enough to learn.<br />Determined enough to build.
+              </p>
+            </div>
+          </div>
+          <div className="w-10 h-[2px] bg-[var(--footer-accent)]/60 mt-3 rounded-full self-center md:self-start" />
+        </div>
+
       </div>
 
       {/* 4. FOOTER DETAILS BAR */}
-      <div className="relative z-30 max-w-6xl mx-auto w-full px-6 md:px-12 pt-10 sm:pt-16 flex flex-col gap-4 border-t border-slate-800/60">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="relative z-30 max-w-6xl mx-auto w-full px-6 pt-6 pb-2 flex flex-col gap-4 border-t border-[#EBE1D4]/45 dark:border-slate-800/40">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           
-          {/* Name & Title */}
-          <div className="flex items-center gap-2.5 text-slate-300 text-sm font-medium transition-colors">
-            <span className="text-gray-700 dark:text-slate-300">Sadhvik Baba</span>
-            <span className="text-slate-700 dark:text-slate-700">|</span>
-            <span className="text-[#71B7FF] font-semibold">Software Engineer</span>
+          {/* Left: Copyright & Crafted info */}
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-2 text-xs text-[var(--footer-title)] font-medium">
+            <div className="flex items-center gap-1.5 font-semibold text-[var(--footer-title)]/75 dark:text-[var(--footer-text)]/75">
+              <FaHeart className="text-[10px] text-[var(--footer-accent)] shrink-0 animate-pulse" />
+              <span>© 2026 Sadhvik Baba</span>
+            </div>
+            
+            <span className="hidden md:inline text-[var(--footer-title)]/30 dark:text-[var(--footer-text)]/30 font-light">|</span>
+            
+            <div className="hidden md:flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] tracking-wide text-[var(--footer-text)]/85 dark:text-[var(--footer-text)]/70">
+              <span>Crafted with</span>
+              <span className="text-[var(--footer-title)] dark:text-[var(--footer-text)] font-semibold opacity-95">Next.js</span>
+              <span className="text-[var(--footer-accent)] font-bold">•</span>
+              <span className="text-[var(--footer-title)] dark:text-[var(--footer-text)] font-semibold opacity-95">TypeScript</span>
+              <span className="text-[var(--footer-accent)] font-bold">•</span>
+              <span className="text-[var(--footer-title)] dark:text-[var(--footer-text)] font-semibold opacity-95">Tailwind CSS</span>
+              <span className="text-[var(--footer-accent)] font-bold">•</span>
+              <span className="text-[var(--footer-title)] dark:text-[var(--footer-text)] font-semibold opacity-95">Framer Motion</span>
+              <span className="text-[var(--footer-accent)] font-bold">•</span>
+              <span className="text-[var(--footer-title)] dark:text-[var(--footer-text)] font-semibold opacity-95">Redis</span>
+              <span className="text-[var(--footer-accent)] font-bold">•</span>
+              <span className="text-[var(--footer-title)] dark:text-[var(--footer-text)] font-semibold opacity-95">AWS</span>
+            </div>
           </div>
 
-          {/* Back to top Button */}
+          {/* Right: Back to Top Button */}
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 text-gray-700 dark:text-slate-300 hover:text-gray-900 dark:hover:text-white text-sm font-semibold tracking-wide transition-colors duration-300 cursor-pointer group"
+            className="flex items-center gap-2.5 text-[var(--hero-heading-gradient-mid)] dark:text-[var(--footer-text)] hover:text-[var(--footer-accent)] dark:hover:text-[var(--footer-accent)] text-xs font-semibold tracking-wide transition-all duration-300 cursor-pointer group"
           >
+            <div className="w-8 h-8 rounded-full border border-[var(--footer-title)]/15 dark:border-[var(--footer-text)]/30 flex items-center justify-center transition-all duration-300 group-hover:border-[var(--footer-accent)]/40 group-hover:bg-[var(--footer-accent)]/5">
+              <FiArrowUp className="w-4 h-4 transition-transform duration-300 group-hover:-translate-y-0.5 text-[var(--hero-heading-gradient-mid)] dark:text-[var(--footer-text)] group-hover:text-[var(--footer-accent)] dark:group-hover:text-[var(--footer-accent)]" />
+            </div>
             <span>Back to top</span>
-            <svg
-              className="w-3.5 h-3.5 transition-transform duration-300 group-hover:-translate-y-1"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-            </svg>
           </button>
         </div>
-
-        {/* Copyright info */}
-        <p className="text-center sm:text-left font-mono text-[11px] text-slate-500 leading-normal transition-colors">
-          © {new Date().getFullYear()} · Built with Next.js.
-        </p>
       </div>
 
     </footer>

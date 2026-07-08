@@ -6,21 +6,21 @@ export const SOCIAL_LINKS = [
     title: "GitHub",
     description: "github.com/SadhvikBaba",
     icon: FiGithub,
-    href: "https://github.com/SadhvikBaba",
+    href: "https://github.com/Sadhvikbaba",
   },
   {
     id: "linkedin",
     title: "LinkedIn",
     description: "linkedin.com/in/sadhvik-baba",
     icon: FiLinkedin,
-    href: "https://linkedin.com/in/sadhvik-baba",
+    href: "https://www.linkedin.com/in/sadhvik-baba-patibandla-563964278",
   },
   {
     id: "leetcode",
     title: "LeetCode",
     description: "500+ Problems Solved",
     icon: FiCode,
-    href: "https://leetcode.com/sadhvik-baba",
+    href: "https://leetcode.com/u/sadhvik_baba_patibandla",
   },
   {
     id: "email",
@@ -34,7 +34,7 @@ export const SOCIAL_LINKS = [
     title: "Resume",
     description: "Download My Resume",
     icon: FiFileText,
-    href: "/resume.pdf",
+    href: "https://drive.google.com/file/d/1aQM8IO26xb8tdmBR3IWiuUeY4fIat9XA/view?usp=sharing",
   },
 ];
 

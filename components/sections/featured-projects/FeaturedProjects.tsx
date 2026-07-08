@@ -39,33 +39,38 @@ export default function FeaturedProjects() {
 
         {/* Section Header (Absolute so it sticks to the top of the pinned viewport) */}
         <div className="absolute top-0 left-0 w-full px-12 lg:px-24 pt-20 lg:pt-28 pb-12 pointer-events-none z-20">
-          <div className="max-w-2xl text-left pointer-events-auto">
+          <div className="max-w-2xl text-left pointer-events-auto flex flex-col items-start">
             <span className="text-[10px] uppercase tracking-[0.3em] font-extrabold mb-3 text-[var(--color-hero-accent)] flex items-center gap-2">
               Featured Projects
               <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-hero-accent)]" />
               <span className="w-6 h-[1px] bg-[var(--color-hero-accent)]/50" />
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--color-hero-heading)] leading-[1.1] font-sans">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--color-hero-heading)] leading-[1.1] font-sans mb-5">
               Built for the <span className="font-serif italic font-medium text-[var(--color-hero-accent)]">Real World</span>
             </h2>
+            <p className="text-sm sm:text-base md:text-lg leading-relaxed text-[var(--color-hero-description)] transition-colors duration-500 font-sans max-w-xl">
+              Every project is an opportunity to solve real problems, explore modern technologies, and engineer scalable solutions from the ground up.
+            </p>
+            <div className="w-16 h-1.5 rounded-full mt-6 bg-[var(--color-hero-accent)]" />
           </div>
         </div>
       </div>
 
       {/* ── MOBILE: Vertical Stack ── */}
       <div className="md:hidden flex flex-col gap-12 py-16 z-10 relative overflow-hidden w-full max-w-[100vw]">
-        <div className="px-6 text-left">
+        <div className="px-6 text-left flex flex-col items-start">
           <span className="text-[10px] uppercase tracking-[0.3em] font-extrabold mb-3 text-[var(--color-hero-accent)] flex items-center gap-2">
             Featured Projects
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-hero-accent)]" />
             <span className="w-6 h-[1px] bg-[var(--color-hero-accent)]/50" />
           </span>
-          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[var(--color-hero-heading)] leading-[1.1] font-sans">
+          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[var(--color-hero-heading)] leading-[1.1] font-sans mb-5">
             Built for the <span className="font-serif italic font-medium text-[var(--color-hero-accent)]">Real World</span>
           </h2>
-          <p className="mt-4 text-sm sm:text-base leading-relaxed text-[var(--color-hero-description)] font-sans">
+          <p className="text-sm sm:text-base leading-relaxed text-[var(--color-hero-description)] font-sans max-w-xl">
             Every project is an opportunity to solve real problems, explore modern technologies, and engineer scalable solutions from the ground up.
           </p>
+          <div className="w-16 h-1.5 rounded-full mt-6 bg-[var(--color-hero-accent)]" />
         </div>
         
         <div className="flex flex-col gap-16">

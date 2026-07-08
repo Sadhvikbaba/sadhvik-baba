@@ -8,14 +8,17 @@
   --sky-top: #E6E1D3;
   --sky-bottom: #FBF9F6;
   
-  --hero-heading: #1E293B;
-  --hero-heading-gradient-start: #1E293B;
-  --hero-heading-gradient-mid: #334155;
-  --hero-heading-gradient-end: #475569;
+  --hero-heading: #20354D;
+  --hero-heading-gradient-start: #1A2D42;
+  --hero-heading-gradient-mid: #33506E;
+  --hero-heading-gradient-end: #577999;
   
-  --hero-subtitle: #334155;
-  --hero-description: #475569;
-  --hero-accent: #B57552; /* Terracotta camel accent */
+  --hero-subtitle: #3C5673;
+  --hero-description: #506B87;
+  --hero-accent: #C07C57;
+  --footer-accent: #C07C57;
+  --footer-title: #20354D;
+  --footer-text: #506B87;
   
   --hero-button-bg: #1E1B18;
   --hero-button-hover: #3D3330;
@@ -63,6 +66,9 @@
 
   /* Accent */
   --hero-accent: #8DAED1;
+  --footer-accent: var(--hero-accent);
+  --footer-title: #F8FAFC;
+  --footer-text: #94A3B8;
 
   /* Buttons */
   --hero-button-bg: rgba(18, 27, 42, 0.88);
@@ -92,6 +98,7 @@
   /* Base */
   --site-bg: #0B1220;
   --site-text: #EEF3FB;
+  --hero-selection: #1E3B5E;
 }
 
 @theme {

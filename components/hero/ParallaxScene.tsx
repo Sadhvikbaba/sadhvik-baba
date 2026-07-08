@@ -357,7 +357,7 @@ export default function ParallaxScene({ content, activeTheme }: ParallaxScenePro
             </h1>
 
             {/* Elegant Subtitle */}
-            <span className="text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase mb-4 font-sans text-hero-subtitle transition-colors duration-500 select-none">
+            <span className="text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase mb-4 font-sans text-hero-accent transition-colors duration-500 select-none">
               {content.title}
             </span>
 
@@ -391,6 +391,14 @@ export default function ParallaxScene({ content, activeTheme }: ParallaxScenePro
           </span>
           <div className="w-[1px] h-6 bg-scroll-line transition-colors duration-500" />
         </motion.div>
+
+        {/* Blending bottom overlay - transitions from transparent to the site background color */}
+        <div 
+          className="absolute bottom-0 left-0 right-0 h-32 md:h-48 z-[45] pointer-events-none transition-colors duration-500"
+          style={{
+            background: "linear-gradient(to bottom, transparent 0%, var(--site-bg) 100%)"
+          }}
+        />
 
       </div>
 

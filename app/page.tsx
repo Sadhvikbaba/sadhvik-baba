@@ -9,12 +9,13 @@ import Footer from "@/components/footer/Footer";
 import ContactSection from "@/components/sections/contact/ContactSection";
 import ExperienceSection from "@/components/sections/experience/ExperienceSection";
 import CredentialsSection from "@/components/sections/certifications/CredentialsSection";
+import AchievementsSection from "@/components/sections/achievements/AchievementsSection";
 
 export const dynamic = "force-dynamic";
 
 export default function Home() {
   return (
-    <main className="relative w-full min-h-screen bg-white dark:bg-slate-950 transition-colors duration-500 selection:bg-slate-800 dark:selection:bg-slate-700 selection:text-white">
+    <main className="relative w-full min-h-screen bg-[var(--site-bg)] transition-colors duration-500 selection:bg-slate-800 dark:selection:bg-slate-700 selection:text-white">
       <PageNavigation />
       
       {/* 1. Cinematic Parallax Hero Section (Occupies 180vh track, 100vh sticky viewport, holds Light/Dark Toggle) */}
@@ -45,7 +46,10 @@ export default function Home() {
       {/* 7. Credentials That Matter (Certifications) */}
       <CredentialsSection />
 
-      {/* 6. Contact Section (Final CTA) */}
+      {/* 8. Hall of Honors (Achievements) */}
+      <AchievementsSection />
+
+      {/* 9. Contact Section (Final CTA) */}
       <section id="contact">
         <Suspense fallback={
           <div className="w-full py-24 bg-[#F5F2EB] dark:bg-[#08111F] border-b border-[#E6E1D3]/50 dark:border-slate-900/40" />

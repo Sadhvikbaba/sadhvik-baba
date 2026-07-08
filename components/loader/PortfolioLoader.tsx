@@ -2,71 +2,23 @@
 
 import React, { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import BackgroundParticles from "./BackgroundParticles";
-import LoaderLogo from "./LoaderLogo";
-import NetworkGraph from "./NetworkGraph";
-import ProgressRing from "./ProgressRing";
 import LoadingStageDisplay from "./LoadingStage";
-import { loaderContainerVariants, sparkVariants, logoVariants } from "./loaderMotion";
 import { LOADING_STAGES, LOADER_TIMING, LoadingStage } from "./loaderConstants";
+import { loaderContainerVariants } from "./loaderMotion";
 
 interface PortfolioLoaderProps {
   onComplete: () => void;
 }
 
-// Responsive network radius using a clamp calculation
-function useNetworkRadius(): number {
-  const [radius, setRadius] = useState(210);
-  useEffect(() => {
-    const update = () => {
-      const vw = window.innerWidth;
-      // clamp(140px, 17.5vw, 210px) — half of network diameter
-      const r = Math.max(140, Math.min(Math.round(vw * 0.175), 210));
-      setRadius(r);
-    };
-    update();
-    window.addEventListener("resize", update, { passive: true });
-    return () => window.removeEventListener("resize", update);
-  }, []);
-  return radius;
-}
-
-// Logo container size: clamp(100px, 11vw, 140px)
-function useLogoSize(): number {
-  const [size, setSize] = useState(140);
-  useEffect(() => {
-    const update = () => {
-      const vw = window.innerWidth;
-      const s = Math.max(100, Math.min(Math.round(vw * 0.11), 140));
-      setSize(s);
-    };
-    update();
-    window.addEventListener("resize", update, { passive: true });
-    return () => window.removeEventListener("resize", update);
-  }, []);
-  return size;
-}
-
-// Progress ring size: fits between logo and network nodes
-function useProgressRingSize(networkRadius: number): number {
-  return Math.round(networkRadius * 0.62);
-}
-
 export default function PortfolioLoader({ onComplete }: PortfolioLoaderProps) {
   const [stageIndex, setStageIndex] = useState(0);
   const [progress, setProgress] = useState(0);
-  const [isCollapsing, setIsCollapsing] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
-
-  const networkRadius = useNetworkRadius();
-  const logoSize = useLogoSize();
-  const ringSize = useProgressRingSize(networkRadius);
 
   const currentStage = LOADING_STAGES[stageIndex] as LoadingStage;
 
   // ── Text stage cycling ─────────────────────────────────────────────────────
   useEffect(() => {
-    if (isCollapsing) return;
     const stages = LOADING_STAGES.length;
     let i = 0;
     const interval = setInterval(() => {
@@ -78,7 +30,7 @@ export default function PortfolioLoader({ onComplete }: PortfolioLoaderProps) {
       }
     }, LOADER_TIMING.stageDuration + 50);
     return () => clearInterval(interval);
-  }, [isCollapsing]);
+  }, []);
 
   // ── Progress animation ─────────────────────────────────────────────────────
   useEffect(() => {
@@ -97,19 +49,12 @@ export default function PortfolioLoader({ onComplete }: PortfolioLoaderProps) {
 
   // ── Collapse + exit sequence ───────────────────────────────────────────────
   const triggerExit = useCallback(() => {
-    setIsCollapsing(true);
-    // After 400ms collapse, begin full loader fade-out
-    setTimeout(() => {
-      setIsExiting(true);
-      // After fade-out completes, call onComplete
-      setTimeout(onComplete, 650);
-    }, 400);
+    setIsExiting(true);
+    setTimeout(onComplete, 650);
   }, [onComplete]);
 
   useEffect(() => {
-    // Minimum display time
     const minTimer = setTimeout(triggerExit, LOADER_TIMING.minDisplay);
-    // Hard safety cap
     const hardTimer = setTimeout(() => {
       clearTimeout(minTimer);
       triggerExit();
@@ -121,35 +66,11 @@ export default function PortfolioLoader({ onComplete }: PortfolioLoaderProps) {
     };
   }, [triggerExit]);
 
-  // ── Reduced motion: simplified version ────────────────────────────────────
-  const [reduced, setReduced] = useState(false);
-  useEffect(() => {
-    setReduced(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
-  }, []);
-
-  if (reduced) {
-    return (
-      <AnimatePresence>
-        {!isExiting && (
-          <motion.div
-            role="status"
-            aria-label="Loading portfolio"
-            aria-busy={!isExiting}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-[9999] flex items-center justify-center h-[100dvh] w-screen"
-            style={{ background: "var(--sky-main)" }}
-          >
-            <div style={{ width: logoSize, height: logoSize }}>
-              <LoaderLogo />
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    );
-  }
+  // SVG parameters for progress ring
+  const radius = 55;
+  const strokeWidth = 3;
+  const circumference = 2 * Math.PI * radius;
+  const strokeDashoffset = circumference - progress * circumference;
 
   return (
     <AnimatePresence>
@@ -163,73 +84,55 @@ export default function PortfolioLoader({ onComplete }: PortfolioLoaderProps) {
           animate="visible"
           exit="exit"
           className="fixed inset-0 z-[9999] flex flex-col items-center justify-center overflow-hidden select-none h-[100dvh] w-screen"
-          style={{ background: "var(--sky-main)" }}
+          style={{ background: "var(--site-bg)" }}
         >
-          {/* ── Background radial glow ─────────────────────────────────────── */}
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background:
-                "radial-gradient(ellipse 60% 50% at 50% 50%, color-mix(in srgb, var(--hero-accent) 6%, transparent) 0%, transparent 70%)",
-            }}
-          />
+          {/* Centerpiece container */}
+          <div className="relative flex items-center justify-center w-40 h-40">
+            
+            {/* Circular Progress Loader */}
+            <svg className="absolute w-[130px] h-[130px] -rotate-90">
+              {/* Background Ring */}
+              <circle
+                cx="65"
+                cy="65"
+                r={radius}
+                className="stroke-[var(--glass-card-border)] fill-none"
+                strokeWidth={strokeWidth}
+                style={{ opacity: 0.5 }}
+              />
+              {/* Foreground Progress */}
+              <motion.circle
+                cx="65"
+                cy="65"
+                r={radius}
+                className="stroke-[var(--hero-accent)] fill-none"
+                strokeWidth={strokeWidth}
+                strokeDasharray={circumference}
+                strokeDashoffset={strokeDashoffset}
+                strokeLinecap="round"
+                transition={{ ease: "easeInOut" }}
+              />
+            </svg>
 
-          {/* ── Particles ─────────────────────────────────────────────────── */}
-          <BackgroundParticles />
+            {/* Monogram Logo (in the middle of the progress circle) */}
+            <div className="relative font-serif text-4xl font-semibold text-[var(--footer-title)] leading-none h-16 w-16 flex items-center justify-center select-none z-10">
+              <span className="absolute -translate-y-1.5 -translate-x-1.5">S</span>
+              <span className="absolute translate-y-1.5 translate-x-1.5">B</span>
+              {/* Star on top right of the monogram logo */}
+              <div className="absolute top-0 right-[-8px]">
+                <svg className="w-3.5 h-3.5 text-[var(--footer-accent)] animate-pulse" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5Z" />
+                </svg>
+              </div>
+            </div>
 
-          {/* ── Main centerpiece ──────────────────────────────────────────── */}
-          <div className="relative flex items-center justify-center" style={{ zIndex: 1 }}>
-            {/* Network graph (behind logo) */}
-            <NetworkGraph
-              networkRadius={networkRadius}
-              isCollapsing={isCollapsing}
-            />
-
-            {/* Progress ring (between network and logo) */}
-            <ProgressRing
-              progress={progress}
-              size={ringSize * 2}
-            />
-
-            {/* Central spark (appears first, then becomes the logo) */}
-            <motion.div
-              variants={sparkVariants}
-              initial="hidden"
-              animate={isCollapsing ? "collapse" : "visible"}
-              aria-hidden="true"
-              style={{
-                position: "absolute",
-                width: 12,
-                height: 12,
-                borderRadius: "50%",
-                background: "var(--hero-accent)",
-                boxShadow: "0 0 20px var(--hero-accent), 0 0 40px var(--hero-accent)",
-              }}
-            />
-
-            {/* Logo */}
-            <motion.div
-              variants={logoVariants}
-              initial="hidden"
-              animate={isCollapsing ? "exit" : "visible"}
-              style={{
-                width: logoSize,
-                height: logoSize,
-                position: "relative",
-                zIndex: 2,
-                flexShrink: 0,
-              }}
-            >
-              <LoaderLogo />
-            </motion.div>
           </div>
 
-          {/* ── Bottom text area ──────────────────────────────────────────── */}
+          {/* Bottom text + dots area */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: isCollapsing ? 0 : 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="absolute bottom-12 flex flex-col items-center gap-4"
             style={{ zIndex: 1 }}
           >

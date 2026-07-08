@@ -33,28 +33,32 @@ export default function ExperienceSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="flex flex-col items-center text-center lg:items-start lg:text-left w-full lg:w-[55%]"
+            className="flex flex-col items-start text-left w-full lg:w-[55%]"
           >
             <motion.span 
               variants={motionConfig.fadeUp}
-              className="text-xs uppercase tracking-[0.3em] font-extrabold mb-4 transition-colors duration-500 text-[var(--color-hero-accent)]"
+              className="text-[10px] uppercase tracking-[0.3em] font-extrabold mb-3 text-[var(--color-hero-accent)] flex items-center gap-2"
             >
-              EXPERIENCE
+              Experience
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-hero-accent)]" />
+              <span className="w-6 h-[1px] bg-[var(--color-hero-accent)]/50" />
             </motion.span>
             
             <motion.h2 
               variants={motionConfig.fadeUp}
-              className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight transition-colors duration-500 font-sans text-[var(--color-hero-heading)]"
+              className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-5 leading-[1.1] transition-colors duration-500 font-sans text-[var(--color-hero-heading)]"
             >
-              Engineering in <span className="text-[var(--color-hero-accent)]">Practice</span>
+              Engineering in <span className="font-serif italic font-medium text-[var(--color-hero-accent)]">Practice</span>
             </motion.h2>
 
             <motion.p 
               variants={motionConfig.fadeUp}
-              className="text-base md:text-lg leading-relaxed max-w-2xl transition-colors duration-500 font-sans text-[var(--color-hero-description)]"
+              className="text-sm sm:text-base md:text-lg leading-relaxed max-w-xl transition-colors duration-500 font-sans text-[var(--color-hero-description)]"
             >
               Building software isn't just about writing code—it's about collaborating with teams, shipping production-ready solutions, and creating measurable engineering impact.
             </motion.p>
+            
+            <div className="w-16 h-1.5 rounded-full mt-6 bg-[var(--color-hero-accent)]" />
           </motion.div>
 
           {/* Right/Bottom: Decorative Illustration (30-35% width on desktop) */}

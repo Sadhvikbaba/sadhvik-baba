@@ -23,31 +23,35 @@ export default function ContactForm() {
   const onSubmit = async (data: IFormInputs) => {
     setSubmitError("");
     try {
-      if (
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID && 
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID && 
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      ) {
-        await emailjs.send(
-          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-          data as any,
-          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-        );
-      } else {
-        // Fallback for development if env variables aren't set
-        console.log("Form submitted: ", data);
-        await new Promise((resolve) => setTimeout(resolve, 1500));
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("EmailJS environment variables are missing.");
       }
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          name: data.name,
+          email: data.email,
+          subject: data.subject || "Portfolio Contact",
+          message: data.message,
+          company: data.company || "N/A"
+        },
+        publicKey
+      );
       
       setIsSuccess(true);
       reset();
       
       // Reset success state after a few seconds
       setTimeout(() => setIsSuccess(false), 5000);
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
-      setSubmitError("Something went wrong. Please try again later.");
+      setSubmitError(error?.message || error?.text || "Something went wrong. Please try again later.");
     }
   };
 

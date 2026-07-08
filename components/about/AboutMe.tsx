@@ -95,7 +95,7 @@ export default function AboutMe() {
   ];
 
   return (
-    <section id="about" className={`relative z-30 w-full min-h-screen lg:h-screen flex items-center justify-center border-t border-b transition-colors duration-500 py-12 lg:py-0 bg-[var(--site-bg)] border-[var(--color-glass-border)] text-[var(--color-hero-heading)]`}>
+    <section id="about" className={`relative z-30 w-full min-h-screen lg:h-screen flex items-center justify-center border-b transition-colors duration-500 py-12 lg:py-0 bg-[var(--site-bg)] border-[var(--color-glass-border)] text-[var(--color-hero-heading)]`}>
       
       {/* Container wrapper */}
       <div className="w-full px-6 md:px-16 lg:px-24 py-6 lg:py-0 grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-10 lg:gap-y-4 items-center">
@@ -104,17 +104,16 @@ export default function AboutMe() {
         <div className="col-span-12 lg:col-span-5 lg:col-start-1 lg:row-start-1 lg:self-end flex flex-col items-start text-left">
           
           {/* Label */}
-          <span className={`text-xs uppercase tracking-[0.3em] font-extrabold mb-3.5 transition-colors duration-500 text-[var(--color-hero-accent)]`}>
+          <span className="text-[10px] uppercase tracking-[0.3em] font-extrabold mb-3 text-[var(--color-hero-accent)] flex items-center gap-2">
             About Me
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-hero-accent)]" />
+            <span className="w-6 h-[1px] bg-[var(--color-hero-accent)]/50" />
           </span>
 
           {/* Heading */}
-          <h2 className={`text-4xl md:text-6xl font-extrabold tracking-tight mb-4.5 leading-tight transition-colors duration-500 font-sans text-[var(--color-hero-heading)]`}>
-            Meet the <span className={`transition-colors duration-500 text-[var(--color-hero-accent)]`}>Engineer</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 leading-tight transition-colors duration-500 font-sans text-[var(--color-hero-heading)]">
+            Meet the <span className="transition-colors duration-500 text-[var(--color-hero-accent)]">Engineer</span>
           </h2>
-
-          {/* Underline bar */}
-          <div className={`w-16 h-1.5 rounded-full mb-2 lg:mb-4 transition-colors duration-500 bg-[var(--color-hero-accent)]`} />
 
         </div>
 
@@ -194,6 +193,9 @@ export default function AboutMe() {
           <p className={`text-base md:text-lg leading-relaxed mb-7.5 transition-colors duration-500 font-sans text-[var(--color-hero-description)]`}>
             Currently pursuing Computer Science with a specialization in AI & Machine Learning. I enjoy turning complex ideas into clean, efficient and impactful solutions.
           </p>
+
+          {/* Underline bar */}
+          <div className="w-16 h-1.5 rounded-full mt-4 mb-6 bg-[var(--color-hero-accent)]" />
 
           {/* Side-by-Side CTA Button & Tech I Work With */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-8 lg:gap-12 w-full mt-3">

@@ -147,16 +147,18 @@ export default function LeetCodeDashboard({ data }: LeetCodeDashboardProps) {
       {/* 1. TOP ROW: Header Area & Profile Details */}
       <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-6 w-full">
         <div className="flex flex-col items-start text-left max-w-2xl">
-          <span className={`text-[10px] uppercase tracking-[0.3em] font-extrabold mb-3 transition-colors duration-500 text-[var(--color-hero-accent)]`}>
+          <span className="text-[10px] uppercase tracking-[0.3em] font-extrabold mb-3 text-[var(--color-hero-accent)] flex items-center gap-2">
             LeetCode Journey
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-hero-accent)]" />
+            <span className="w-6 h-[1px] bg-[var(--color-hero-accent)]/50" />
           </span>
-          <h2 className={`text-4xl md:text-6xl font-extrabold tracking-tight mb-4.5 leading-tight transition-colors duration-500 font-sans text-[var(--color-hero-heading)]`}>
-            Solving <span className={`transition-colors duration-500 text-[var(--color-hero-accent)]`}>Beyond Limits</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-5 leading-[1.1] transition-colors duration-500 font-sans text-[var(--color-hero-heading)]">
+            Solving <span className="font-serif italic font-medium text-[var(--color-hero-accent)]">Beyond Limits</span>
           </h2>
-          <div className={`w-16 h-1.5 rounded-full mb-6 transition-colors duration-500 bg-[var(--color-hero-accent)]`} />
-          <p className={`text-base md:text-lg leading-relaxed transition-colors duration-500 font-sans text-[var(--color-hero-description)]`}>
+          <p className="text-sm sm:text-base md:text-lg leading-relaxed text-[var(--color-hero-description)] transition-colors duration-500 font-sans max-w-xl">
             Every problem solved is another step toward becoming a better engineer. Consistency, discipline, and curiosity continue to shape my problem-solving journey.
           </p>
+          <div className="w-16 h-1.5 rounded-full mt-6 bg-[var(--color-hero-accent)]" />
         </div>
 
         {/* Desktop Profile Card (Always visible on desktop beside header block) */}

@@ -29,8 +29,8 @@ export const CERTIFICATES: Certificate[] = [
     description: "Validated cloud computing knowledge covering AWS core services, networking, security, deployment, and architectural best practices.",
     skills: ["AWS", "IAM", "EC2", "S3", "VPC", "Cloud"],
     previewImage: "/certificates/aws.png",
-    verifyUrl: "#",
-    certificateUrl: "#"
+    verifyUrl: "https://www.credly.com/badges/a9189f7b-3c69-47fd-abe7-439bb1e37f85/public_url",
+    certificateUrl: "https://www.credly.com/badges/a9189f7b-3c69-47fd-abe7-439bb1e37f85/public_url"
   },
   {
     id: "hackerrank-python",
@@ -42,6 +42,8 @@ export const CERTIFICATES: Certificate[] = [
     description: "Demonstrated proficiency in Python basics including data types, operators, and basic logic structures.",
     skills: ["Python", "Algorithms", "Data Structures"],
     previewImage: "/certificates/python.png",
+    verifyUrl : "https://www.hackerrank.com/certificates/ec2246dc7578",
+    certificateUrl: "https://www.hackerrank.com/certificates/ec2246dc7578"
   },
   {
     id: "hackerrank-problem-solving",
@@ -53,6 +55,8 @@ export const CERTIFICATES: Certificate[] = [
     description: "Validated intermediate problem-solving skills, focusing on advanced algorithms and optimal data structure usage.",
     skills: ["Algorithms", "Problem Solving", "Logic", "Optimization"],
     previewImage: "/certificates/problem.png",
+    verifyUrl : "https://www.hackerrank.com/certificates/8e923b8fedd2",
+    certificateUrl: "https://www.hackerrank.com/certificates/8e923b8fedd2"
   },
   {
     id: "postman-api",

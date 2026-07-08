@@ -15,8 +15,70 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sadhvik Baba Patibandla",
-  description: "Portfolio of Sadhvik Baba - Full Stack Engineer & Software Engineer building scalable software, real-time systems, and intelligent applications.",
+  metadataBase: new URL("https://sadhvik-baba.vercel.app"),
+  title: {
+    default: "Sadhvik Baba Patibandla | Software Engineer Portfolio",
+    template: "%s | Sadhvik Baba Patibandla",
+  },
+  description: "Portfolio of Sadhvik Baba Patibandla - Software Engineer & Full Stack Developer studying at SRM AP. Specializing in building scalable distributed systems, cloud architecture, real-time web applications, and clean interfaces.",
+  keywords: [
+    "Sadhvik Baba Patibandla",
+    "Sadhvik Baba",
+    "Sadhvik",
+    "Patibandla",
+    "SRM AP",
+    "SRM University AP",
+    "Software Engineer",
+    "Full Stack Developer",
+    "Next.js Developer",
+    "React Developer",
+    "Sadhvik Baba Portfolio",
+    "Sadhvik Baba SRM AP",
+    "Sadhvik Baba Patibandla SRM AP",
+    "Software Engineer SRM AP",
+    "Distributed Systems",
+    "Cloud Architecture"
+  ],
+  authors: [{ name: "Sadhvik Baba Patibandla", url: "https://sadhvik-baba.vercel.app" }],
+  creator: "Sadhvik Baba Patibandla",
+  publisher: "Sadhvik Baba Patibandla",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: "Sadhvik Baba Patibandla | Software Engineer",
+    description: "Explore the portfolio of Sadhvik Baba Patibandla - Full Stack Engineer at SRM AP building scalable web apps and high-performance digital systems.",
+    url: "https://sadhvik-baba.vercel.app",
+    siteName: "Sadhvik Baba Patibandla Portfolio",
+    images: [
+      {
+        url: "/me.png",
+        width: 800,
+        height: 800,
+        alt: "Sadhvik Baba Patibandla - Software Engineer",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sadhvik Baba Patibandla | Software Engineer",
+    description: "Explore the portfolio of Sadhvik Baba Patibandla - Full Stack Engineer at SRM AP building scalable web apps.",
+    images: ["/me.png"],
+    creator: "@Sadhvikbaba",
+  },
+  alternates: {
+    canonical: "https://sadhvik-baba.vercel.app",
+  },
 };
 
 export default function RootLayout({
@@ -25,8 +87,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} overflow-x-hidden md:overflow-x-visible max-w-[100vw] md:max-w-none`}>
-      <body className="font-sans antialiased w-full min-h-screen bg-white overflow-x-hidden md:overflow-x-visible max-w-[100vw] md:max-w-none">
+    <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} overflow-x-clip max-w-[100vw] md:max-w-none`}>
+      <body suppressHydrationWarning className="font-sans antialiased w-full min-h-screen bg-white overflow-x-clip max-w-[100vw] md:max-w-none">
         <LoaderProvider>
           <SmoothScroll>
             {children}
