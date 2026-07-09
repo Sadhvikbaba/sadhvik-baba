@@ -368,7 +368,7 @@ export default function ParallaxScene({ content, activeTheme }: ParallaxScenePro
 
             {/* Get in Touch Pill Button */}
             <Button
-              href="mailto:contact@sadhvik.com"
+              href="mailto:psadhvik2006@gmail.com"
               onClick={(e: React.MouseEvent) => e.stopPropagation()}
             >
               <span>Get in touch</span>
