@@ -12,10 +12,10 @@ export default function SubmitButton({ isSubmitting, isSuccess }: SubmitButtonPr
     <button
       type="submit"
       disabled={isSubmitting || isSuccess}
-      className={`group relative w-full flex items-center justify-center gap-2 py-4 rounded-xl font-medium text-[var(--color-hero-button-text)] transition-all duration-300 overflow-hidden ${
+      className={`group relative w-full flex items-center justify-center gap-2 py-4 rounded-xl font-medium transition-all duration-300 overflow-hidden ${
         isSuccess
-          ? 'bg-green-600 hover:bg-green-700'
-          : 'bg-[var(--color-hero-button-bg)] hover:bg-[var(--color-hero-button-hover)] border border-[var(--color-hero-button-border)] hover:border-[var(--color-hero-accent)]/30 hover:shadow-lg hover:-translate-y-0.5'
+          ? 'bg-[var(--color-hero-accent)] text-[var(--color-site-bg)]'
+          : 'bg-[var(--color-hero-button-bg)] hover:bg-[var(--color-hero-button-hover)] border border-[var(--color-hero-button-border)] hover:border-[var(--color-hero-accent)]/30 hover:shadow-lg hover:-translate-y-0.5 text-[var(--color-hero-button-text)]'
       } disabled:opacity-80 disabled:cursor-not-allowed`}
     >
       <div className="relative z-10 flex items-center gap-2">

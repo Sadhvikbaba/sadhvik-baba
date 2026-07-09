@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import emailjs from "@emailjs/browser";
 import { FiLock, FiSend } from "react-icons/fi";
 import FormInput from "./FormInput";
 import SubmitButton from "./SubmitButton";
@@ -23,35 +22,36 @@ export default function ContactForm() {
   const onSubmit = async (data: IFormInputs) => {
     setSubmitError("");
     try {
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-
-      if (!serviceId || !templateId || !publicKey) {
-        throw new Error("EmailJS environment variables are missing.");
-      }
-
-      await emailjs.send(
-        serviceId,
-        templateId,
-        {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
           name: data.name,
           email: data.email,
           subject: data.subject || "Portfolio Contact",
           message: data.message,
-          company: data.company || "N/A"
-        },
-        publicKey
-      );
+          company: data.company || "N/A",
+        }),
+      });
+
+      const result = await response.json();
       
-      setIsSuccess(true);
-      reset();
-      
-      // Reset success state after a few seconds
-      setTimeout(() => setIsSuccess(false), 5000);
+      if (result.success) {
+        setIsSuccess(true);
+        reset();
+        
+        // Reset success state after a few seconds
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        throw new Error(result.message || "Something went wrong. Please try again later.");
+      }
     } catch (error: any) {
       console.error(error);
-      setSubmitError(error?.message || error?.text || "Something went wrong. Please try again later.");
+      setSubmitError(error?.message || "Something went wrong. Please try again later.");
     }
   };
 
