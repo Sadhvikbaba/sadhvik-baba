@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google : "M6-pTwnbAWZHe_x9p-LkK-_hwuBteMgourvlwZkfGC8"
+    google : "Po7Ls--6WZuhoIZwS7aHdl15TnB1ERDowY-tBVNlbCg"
   },
   openGraph: {
     title: "Sadhvik Baba Patibandla | Software Engineer",
