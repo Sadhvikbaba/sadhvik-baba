@@ -53,6 +53,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google : "M6-pTwnbAWZHe_x9p-LkK-_hwuBteMgourvlwZkfGC8"
+  },
   openGraph: {
     title: "Sadhvik Baba Patibandla | Software Engineer",
     description: "Explore the portfolio of Sadhvik Baba Patibandla - Full Stack Engineer at SRM AP building scalable web apps and high-performance digital systems.",
